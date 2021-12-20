@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Login - Prepr Network</title>
+    <link
+        href="https://d2qgo50yy98y8.cloudfront.net/public/adminassets/vendors/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css"
+        rel="stylesheet" type="text/css" />
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <link href="style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body class="login-page">
+    <div class="check">
+        <div class="container-fluid">
+            <div class="col-md-12 sm-p-0">
+                <div class="col-md-4 offset-md-7 p-l-80 p-r-0">
+                    <div class="card login-card mt-5">
+                        <div class="card-header bg-white text-center">
+                            <div class="login-logo p-10">
+                                <img src="logo2.png">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <!-- form Login -->
+                            <!-- <form class="login-form form-horizontal" autocomplete="off"> -->
+                            <form method="POST" action="/newuser" accept-charset="UTF-8"
+                                class="login-form form-horizontal" autocomplete="off">
+                                <div class="md-form cs-form ">
+                                    <input type="text" name="firstName" id="firstName" class="form-control" placeholder="First Name*">
+                                </div>
+                                <div class="md-form cs-form ">
+                                    <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last Name*">
+                                </div>
+                                <div class="md-form cs-form ">
+                                    <input name="username" type="text" id="materialFormRegisterNameEx"
+                                        class="form-control" placeholder="UserName*">
+
+                                </div>
+                                <div class="md-form cs-form">
+                                    <input type="password" name="password" id="pass" class="form-control pass-padng" placeholder="Password*">
+                                </div>
+                                <div class="md-form cs-form">
+                                    <input type="password" name="password_confirmation" id="conf_pass"
+                                        class="form-control" placeholder="Confirm Password*">
+                                </div>
+                                <div class="md-form cs-form ">
+                                    <input type="email" name="email" id="email-id" class="form-control" placeholder="Email*">
+                                </div>
+                                <div class="md-form cs-form ">
+                                    <input type="text" name="phone_number" id="phone_number-id" class="form-control"
+                                    placeholder="Phone Number">
+                                </div>
+                                <div class="md-form cs-form">
+                                    <select id="user_type" name="user_type" class="form-control" style="height: 50px">
+                                        <option value="" selected="">User Type*</option>
+                                        <option value="student">Student</option>
+                                        <option value="applicant">Applicant</option>
+                                        <option value="teacher">Teacher</option>
+                                        <option value="facilitator">Facilitator</option>
+                                        <option value="mentor">Mentor</option>
+                                        <option value="expert">Expert</option>
+                                        <option value="recent_grad">Recent Grad</option>
+                                        <option value="employee">Employee</option>
+                                        <option value="employer">Employer</option>
+                                        <option value="investor">Investor</option>
+                                        <option value="job_seeker">Job Seeker</option>
+                                        <option value="intrapreneur">Intrapreneur</option>
+                                        <option value="aspiring_entrepreneur">Aspiring Entrepreneur</option>
+                                        <option value="learner">Learner</option>
+                                        <option value="innovator">Innovator</option>
+                                        <option value="startup">Startup</option>
+                                        <option value="evaluator">Evaluator</option>
+                                    </select>
+                                    <span class="text-left help-block text-red"></span>
+                                </div>
+
+                                <div class="md-form cs-form">
+                                    <select id="status" name="status" class="form-control" style="height: 50px">
+                                        <option value="" selected="">Status*</option>
+                                        <option value="looking_mentor">Looking to mentor projects</option>
+                                        <option value="looking_team">Looking to join a team</option>
+                                        <option value="Looking_teammates">Looking for team mates</option>
+                                        <option value="looking_invest">Looking to invest</option>
+                                        <option value="looking_employees">Looking for employees</option>
+                                        <option value="looking_employers">Looking for employers</option>
+                                        <option value="looking_to_build_skills">looking to build skills</option>
+                                        <option value="looking_to_learn">looking to learn</option>
+                                        <option value="looking_to_solve_problems">looking to solve problems</option>
+                                        <option value="looking_to_create_social_impact">looking to create social impact
+                                        </option>
+                                        <option value="looking_for_investors">looking for investors </option>
+
+                                    </select>
+                                    <span class="text-left help-block text-red"></span>
+                                </div>
+
+                                <div class="md-form cs-form ">
+                                    <input type="text" name="referralCode" id="referralCode" class="form-control"
+                                    placeholder="Referral Code">
+                                </div>
+                                <p>
+                                    <small>
+                                        By registering, you agree to the Stylism <a href="/"
+                                            target="_blank">Terms of Use</a>,
+                                        <a href="/" target="_blank">
+                                            Privacy Policy and Cookie Policy
+                                        </a>
+                                    </small>
+                                </p>
+                                <div class="text-center mt-3">
+                                    <input type="hidden" name="url_intended" value="/">
+                                    <button class="btn btn-danger btn-block waves-effect waves-light"
+                                        type="submit">Register</button>
+                                </div>
+                                <div class="text-center or">
+                                    <p>OR</p>
+                                </div>
+                                <div class="m-b-5">
+                                    <a href="/"
+                                        class="btn  btn-info btn-block waves-effect waves-light">Continue
+                                        with Microsoft</a>
+                                </div>
+                                <div class="m-b-5">
+                                    <a href="/"
+                                        class="btn  btn-info btn-block waves-effect waves-light">Continue
+                                        with LinkedIn</a>
+                                </div>
+                                <div class="m-b-5">
+                                    <a href="/"
+                                        class="btn  btn-info btn-block waves-effect waves-light">Continue
+                                        with Google</a>
+                                </div>
+
+                                <div class="m-b-5">
+                                    <a href="/"
+                                        class="btn  btn-info btn-block waves-effect waves-light">Continue
+                                        with Magnet</a>
+                                </div>
+                            </form>
+
+                            <div class="text-center m-t-8 m-b-5 f-s-14">
+                                You already have an account? <a href="/"
+                                    class="text-light-green">Login</a>
+                            </div>
+                            <div class="text-center m-t-8 m-b-5 f-s-14">
+                                Are you an organization? <a href="/"
+                                    class="text-light-green">Organization Register</a>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

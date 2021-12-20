@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Dashboard</title>
+
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="main.css">
+
+
+</head>
+
+<body>
+
+
+
+    <header id="header" class="navbar bg-white fixed-top navbar-expand-lg top-nw-nav-header">
+
+        <div class="container-fluid">
+            <ul class="navbar-nav flex-row d-md-flex top-nw-nv-l">
+
+            </ul>
+            <ul class="navbar-nav right_nav top-nw-nav">
+                <li class="nav-item d-sm-flex d-md-flex d-lg-flex d-xl-flex">
+                    <a class="nav-link" onclick=SwitchMode()>
+                        <span class="menu-icon"><img
+                                src="https://d2qgo50yy98y8.cloudfront.net/public/front/img/explore.png" alt=""></span>
+                        <span class="d-none d-sm-none d-md-none d-lg-block d-xl-block">Switch View</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown d-sm-flex d-md-flex d-lg-flex d-xl-flex">
+                    <a class="nav-link dropdown-toggle" id="new_org_dashboard" href="#" data-toggle="dropdown"
+                        data-url="/"> <span class="menu-icon"><img
+                                src="https://d2qgo50yy98y8.cloudfront.net/public/front/img/web-browser.png" alt="create"
+                                width="80%" height="4px"></span> <span
+                            class="d-none d-sm-none d-md-none d-lg-block d-xl-block">My Dashboard </span> </a>
+                    <ul class="dropdown-menu firstmenu ">
+                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="/"> <span
+                                    class="menu-icon"><img
+                                        src="https://d2qgo50yy98y8.cloudfront.net/public/front/img/user.png"
+                                        alt="create"></span> User Dashboard </a></li>
+
+
+
+                    </ul>
+                </li>
+
+
+
+                <!--  -->
+
+                <li class="nav-item dropdown d-sm-flex d-md-flex d-lg-flex d-xl-flex">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> <span class="menu-icon"><img
+                                src="https://d2qgo50yy98y8.cloudfront.net/public/front/img/settings.png" alt=""
+                                width="80%" height="5px"></span><span
+                            class="d-none d-sm-none d-md-none d-lg-block d-xl-block"> Manage</span> </a>
+                    <ul class="dropdown-menu firstmenu last-mbl-right">
+                        <li><a class="dropdown-item" href="/"> <span class="menu-icon"><img
+                                        src="https://d2qgo50yy98y8.cloudfront.net/public/front/img/user.png"
+                                        alt="profile"></span> Profile </a></li>
+                    </ul>
+                </li>
+                <li class="nav-item searchbar">
+                    <div class="input-group" id="multiple-datasets">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><img alt="search"
+                                    src="https://d2qgo50yy98y8.cloudfront.net/public/front/img/search_icon.png"></span>
+                        </div>
+                        <input type="text" class="form-control typeahead" id="main_search" style="width:358px"
+                            placeholder="Search Bar">
+                    </div>
+                </li>
+                <li class="nav-item notification dropdown">
+                    <a href="/" class="nav-link user_details_drop dropdown-toggle" id="dropdownMenuButton" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="user_profile">
+                            <img alt="" src="/"
+                                onerror="this.onerror=null;this.src='https://d2qgo50yy98y8.cloudfront.net/public/front/img/default-user.png';"
+                                title="Joseph B">
+                        </span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right notifi_menu" aria-labelledby="dropdownMenuButton">
+                        <ul class="notifi_lst">
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+
+                                    <div class="menu-info">
+                                        <h4 style="font-size: 20px">Joseph B</h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+                                        <h4><i class="fas fa-user"></i> My Info</h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+                                        <h4><i class="fas fa-question-circle"></i> Help </h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+                                        <h4><i class="fas fa-envelope"></i> Inbox</h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+                                        <h4><i class="fas fa-newspaper"></i> Newsfeed </h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+                                        <h4><i class="fas fa-bell"></i>
+                                            Notifications 18
+                                        </h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+
+                                        <h4><i class="fas fa-cog"></i> Settings</h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+                                        <h4><i class="fas fa-sign-out-alt"></i> Log Out</h4>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </li>
+
+            </ul>
+        </div>
+    </header>
+
+    <section class="bg-alice-blue main_section home-dashboard" id="maindashboard">
+        <div class="loader-main-block">
+            <div class="j-loader">Prepr</div>
+        </div>
+
+        <div class="acsb-trigger acsb-bg-lead acsb-trigger-size-medium acsb-trigger-position-x-right acsb-trigger-position-y-top acsb-ready"
+            tabindex="0" role="button" style="display: none; inset: 42px 5px auto auto; border-radius: 50%;"
+            aria-label="Open accessibility options, statement and help" data-acsb="trigger"> <span
+                class="acsb-trigger-icon"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 50 57"
+                    enable-background="new 0 0 50 57" xml:space="preserve">
+                    <path
+                        d="M20.821,0c-2.962,0-5.363,2.402-5.363,5.364s2.401,5.363,5.363,5.363c2.961,0,5.363-2.401,5.363-5.363S23.782,0,20.821,0z M17.932,11.083c-3.158,0.007-3.741,1.995-3.741,3.622v19.138c0,1.645,1.325,2.975,2.969,2.969l13.597-0.06c0,0,4.681,7.089,7.026,10.628c0.703,1.061,1.638,1.999,2.988,1.999c1.781,0,3.421-1.453,3.226-3.226c-0.074-0.695-0.231-1.354-0.652-1.979c-2.091-3.117-6.234-9.859-8.511-12.39c-0.578-0.643-1.377-1.112-2.315-1.109l-11.242,0.04V18.802l8.016,5.542c1.156,0.797,2.726,0.502,3.522-0.653c0.798-1.156,0.504-2.725-0.653-3.523c0,0-8.335-5.75-12.508-8.629C19.22,11.239,18.418,11.083,17.932,11.083z M48.926,16.447c-0.193,0-0.387,0.069-0.535,0.217l-9.995,9.995H24.225c-0.418,0-0.751,0.334-0.751,0.752v0.277c0,0.419,0.333,0.752,0.751,0.752h14.567c0.226,0,0.445-0.088,0.573-0.217l10.292-10.292c0.295-0.296,0.295-0.773,0-1.069l-0.198-0.198C49.313,16.517,49.117,16.447,48.926,16.447z M12.766,21.672C5.423,23.879,0,30.721,0,38.949C0,48.995,8.121,57,17.892,57c7.486,0,14.004-4.687,16.645-11.4l-2.691-4.058c-1.22,6.446-6.914,11.421-13.953,11.421c-7.955,0-14.21-6.363-14.21-14.014c0-5.9,3.735-11.026,9.084-13.062V21.672z">
+                    </path>
+                </svg></span><span class="acsb-actions-active-icon"> <svg version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 105 79" style="enable-background:new 0 0 105 79;" xml:space="preserve">
+                    <g>
+                        <path
+                            d="M12.6,38.9C6,31.9-4.7,42.6,2.3,49.2c8.7,9,17.3,18.3,26.3,27c4,3.7,7,3.7,10.7,0l63.6-63.3	c6.7-7-3.7-17.6-10.7-10.7L34.3,60.2L12.6,38.9z">
+                        </path>
+                    </g>
+                </svg> </span>
+        </div>
+        <div class="acsb-widget acsb-widget-position-left acsb-ready" style="display: none;" tabindex="-1" role="dialog"
+            aria-label="Accessibility Adjustments" aria-modal="true" aria-hidden="true" data-acsb="widget">
+            <div class="acsb-header acsb-flex">
+                <div class="acsb-start"> <a href="#" role="button" tabindex="0"
+                        class="acsb-header-option acsb-header-option-close" data-acsb-option="close"
+                        aria-label="Close Accessibility Interface" data-acsb-tooltip="Close Accessibility Interface"> <i
+                            class="acsbi-close"></i> </a> <a href="#" role="button" tabindex="0"
+                        class="acsb-header-option acsb-header-option-position" data-acsb-option="position"
+                        aria-label="Change Accessibility Interface Position"
+                        data-acsb-tooltip="Change Accessibility Interface Position"> <i class="acsbi-sides"></i> </a> <a
+                        href="#" role="button" tabindex="0" class="acsb-header-option acsb-header-option-statement"
+                        data-acsb-option="statement" aria-label="Accessibility Statement"
+                        data-acsb-tooltip="Accessibility Statement"> <i class="acsbi-question"></i> </a> </div> <a
+                    role="button" href="#" tabindex="0" aria-label="English"
+                    class="acsb-language acsb-header-option-language" data-acsb-option="language"
+                    data-acsb-popup-trigger="acsb-language-popup"> <span class="acsb-language-flag"> <span
+                            data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/en.svg"
+                            data-acsb-lazy-load-options="alt=English"></span> </span> <span
+                        class="acsb-language-text">English</span> <i class="acsbi-chevron_down"></i> </a>
+            </div>
+            <div class="acsb-main" data-acsb="main">
+                <div class="acsb-hero"> <span class="acsb-hero-title">Accessibility Adjustments</span>
+                    <div class="acsb-hero-actions acsb-flex"> <a href="#" class="acsb-hero-action" role="button"
+                            tabindex="0" data-acsb-option="reset"> <i class="acsbi-reset"></i> <span>Reset
+                                Settings</span>
+                        </a> <a href="#" class="acsb-hero-action" role="button" data-acsb-option="statement"> <i
+                                class="acsbi-bullhorn"></i> <span>Statement</span> </a> <a href="#"
+                            class="acsb-hero-action" role="button" tabindex="0"
+                            data-acsb-popup-trigger="acsb-hide-popup"> <i class="acsbi-hide"></i>
+                            <span>Hide Interface</span> </a> </div>
+                </div>
+                <div class="acsb-main-options">
+                    <div class="acsb-search">
+                        <form class="acsb-form" data-acsb-search="form" enctype="multipart/form-data" action="#"
+                            method="POST"> <input type="text" tabindex="0" name="acsb_search" autocomplete="off"
+                                placeholder="Search the online dictionary..."
+                                aria-label="Search the online dictionary...">
+                            <i class="acsbi-search"></i>
+                        </form>
+                        <div class="acsb-search-results-wrapper" data-acsb-search-results="wrapper"> <span role="button"
+                                tabindex="0" data-acsb-search-results="close" aria-label="Close"
+                                class="acsb-search-close">
+                                <i class="acsbi-close"></i> </span>
+                            <div class="acsb-search-results" data-acsb-search-results="list"></div>
+                        </div>
+                    </div>
+                    <div class="acsb-actions">
+                        <div class="acsb-actions-box acsb-actions-box-profiles" data-acsb-actions-box="profiles">
+                            <div class="acsb-actions-title">Choose the right accessibility profile for you</div>
+                            <div class="acsb-profiles">
+                                <div class="acsb-profile acsb-profile-seizures" tabindex="0" role="button"
+                                    aria-pressed="false" data-acsb-action="seizuresProfile">
+                                    <div class="acsb-profile-toggle" aria-hidden="true">
+                                        <div class="acsb-toggle acsb-toggle-off"> <span
+                                                class="acsb-toggle-option acsb-toggle-option-off">OFF</span> <span
+                                                class="acsb-toggle-option acsb-toggle-option-on">ON</span> </div>
+                                    </div>
+                                    <div class="acsb-profile-content"> <span class="acsb-profile-name">Seizure Safe
+                                            Profile</span> <span class="acsb-profile-text">Eliminates flashes and
+                                            reduces
+                                            color</span> <i class="acsbi-vibrate"></i> </div>
+                                    <div class="acsb-profile-description"> This profile enables epileptic and seizure
+                                        prone
+                                        users to browse safely by eliminating the risk of seizures that result from
+                                        flashing
+                                        or blinking animations and risky color combinations. </div> <i
+                                        class="acsb-profile-connected acsbi-chain"></i>
+                                </div>
+                                <div class="acsb-profile acsb-profile-vision" tabindex="0" role="button"
+                                    aria-pressed="false" data-acsb-action="visionProfile">
+                                    <div class="acsb-profile-toggle" aria-hidden="true">
+                                        <div class="acsb-toggle acsb-toggle-off"> <span
+                                                class="acsb-toggle-option acsb-toggle-option-off">OFF</span> <span
+                                                class="acsb-toggle-option acsb-toggle-option-on">ON</span> </div>
+                                    </div>
+                                    <div class="acsb-profile-content"> <span class="acsb-profile-name">Vision Impaired
+                                            Profile</span> <span class="acsb-profile-text">Enhances the website's
+                                            visuals</span> <i class="acsbi-eye"></i> </div>
+                                    <div class="acsb-profile-description"> This profile adjusts the website, so that it
+                                        is
+                                        accessible to the majority of visual impairments such as Degrading Eyesight,
+                                        Tunnel
+                                        Vision, Cataract, Glaucoma, and others. </div> <i
+                                        class="acsb-profile-connected acsbi-chain"></i>
+                                </div>
+                                <div class="acsb-profile acsb-profile-cognitive" tabindex="0" role="button"
+                                    aria-pressed="false" data-acsb-action="cognitiveProfile">
+                                    <div class="acsb-profile-toggle" aria-hidden="true">
+                                        <div class="acsb-toggle acsb-toggle-off"> <span
+                                                class="acsb-toggle-option acsb-toggle-option-off">OFF</span> <span
+                                                class="acsb-toggle-option acsb-toggle-option-on">ON</span> </div>
+                                    </div>
+                                    <div class="acsb-profile-content"> <span class="acsb-profile-name">Cognitive
+                                            Disability
+                                            Profile</span> <span class="acsb-profile-text">Assists with reading and
+                                            focusing</span> <i class="acsbi-thought"></i> </div>
+                                    <div class="acsb-profile-description"> This profile provides various assistive
+                                        features
+                                        to help users with cognitive disabilities such as Autism, Dyslexia, CVA, and
+                                        others,
+                                        to focus on the essential elements of the website more easily. </div> <i
+                                        class="acsb-profile-connected acsbi-chain"></i>
+                                </div>
+                                <div class="acsb-profile acsb-profile-adhd" tabindex="0" role="button"
+                                    aria-pressed="false" data-acsb-action="adhdProfile">
+                                    <div class="acsb-profile-toggle" aria-hidden="true">
+                                        <div class="acsb-toggle acsb-toggle-off"> <span
+                                                class="acsb-toggle-option acsb-toggle-option-off">OFF</span> <span
+                                                class="acsb-toggle-option acsb-toggle-option-on">ON</span> </div>
+                                    </div>
+                                    <div class="acsb-profile-content"> <span class="acsb-profile-name">ADHD Friendly
+                                            Profile</span> <span class="acsb-profile-text">More focus and fewer
+                                            distractions</span> <i class="acsbi-target"></i> </div>
+                                    <div class="acsb-profile-description"> This profile significantly reduces
+                                        distractions,
+                                        to help people with ADHD and Neurodevelopmental disorders browse, read, and
+                                        focus on
+                                        the essential elements of the website more easily. </div> <i
+                                        class="acsb-profile-connected acsbi-chain"></i>
+                                </div>
+                                <div class="acsb-profile acsb-profile-blind" tabindex="0" role="button"
+                                    aria-pressed="false" data-acsb-action="motorProfile">
+                                    <div class="acsb-profile-toggle" aria-hidden="true">
+                                        <div class="acsb-toggle acsb-toggle-off"> <span
+                                                class="acsb-toggle-option acsb-toggle-option-off">OFF</span> <span
+                                                class="acsb-toggle-option acsb-toggle-option-on">ON</span> </div>
+                                    </div>
+                                    <div class="acsb-profile-content"> <span class="acsb-profile-name">Blind Users
+                                            (Screen-reader)</span> <span class="acsb-profile-text">Use the website with
+                                            your
+                                            screen-reader</span> <i class="acsbi-voice"></i> </div>
+                                    <div class="acsb-profile-description"> This profile adjusts the website to be
+                                        compatible
+                                        with screen-readers such as JAWS, NVDA, VoiceOver, and TalkBack. A screen-reader
+                                        is
+                                        software that is installed on the blind user’s computer and smartphone, and
+                                        websites
+                                        should ensure compatibility with it. <br><br><strong>Note:</strong> This profile
+                                        prompts automatically to screen-readers. </div> <i
+                                        class="acsb-profile-connected acsbi-chain"></i>
+                                </div>
+                                <div class="acsb-profile acsb-profile-motor" tabindex="0" role="button"
+                                    aria-pressed="false" data-acsb-action="motorProfile">
+                                    <div class="acsb-profile-toggle" aria-hidden="true">
+                                        <div class="acsb-toggle acsb-toggle-off"> <span
+                                                class="acsb-toggle-option acsb-toggle-option-off">OFF</span> <span
+                                                class="acsb-toggle-option acsb-toggle-option-on">ON</span> </div>
+                                    </div>
+                                    <div class="acsb-profile-content"> <span class="acsb-profile-name">Keyboard
+                                            Navigation
+                                            (Motor)</span> <span class="acsb-profile-text">Use the website with the
+                                            keyboard</span> <i class="acsbi-navigation"></i> </div>
+                                    <div class="acsb-profile-description"> This profile enables motor-impaired persons
+                                        to
+                                        operate the website using the keyboard Tab, Shift+Tab, and the Enter keys. Users
+                                        can
+                                        also use shortcuts such as “M” (menus), “H” (headings), “F” (forms), “B”
+                                        (buttons),
+                                        and “G” (graphics) to jump to specific elements.<br><br><strong>Note:</strong>
+                                        This
+                                        profile prompts automatically for keyboard users. </div> <i
+                                        class="acsb-profile-connected acsbi-chain"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="acsb-actions-box acsb-actions-box-textAdjustments"
+                            data-acsb-actions-box="textAdjustments">
+                            <div class="acsb-actions-title">Content Adjustments</div>
+                            <div class="acsb-actions-group">
+                                <div class="acsb-action-box acsb-action-box-zoom acsb-action-box-big " tabindex="0"
+                                    data-acsb-action="zoom" data-acsb-action-group="" data-acsb-action-message=""
+                                    data-acsb-action-css-property="zoom" data-acsb-action-specific-element="body"
+                                    data-acsb-action-specific-increment="25">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-zoom"></i> <span
+                                            class="acsb-box-title">Content Scaling</span> </div>
+                                    <div class="acsb-big-box-element acsb-big-box-element-range">
+                                        <div class="acsb-range" data-acsb-range-slider="">
+                                            <div class="acsb-range-plus acsb-range-button acsb-bg-lead"
+                                                data-acsb-range-action="increase" role="button" tabindex="0"
+                                                aria-label="Increase"> <i class="acsbi-chevron_up"></i> </div>
+                                            <div class="acsb-range-base acsb-color-lead"
+                                                data-acsb-range-current-number="" data-acsb-range-default="Default">
+                                                Default </div>
+                                            <div class="acsb-range-minus acsb-range-button acsb-bg-lead"
+                                                data-acsb-range-action="decrease" tabindex="0" aria-label="Decrease"
+                                                role="button"> <i class="acsbi-chevron_down"></i> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-readableFont " role="button"
+                                    aria-pressed="false" tabindex="0" data-acsb-action="readableFont"
+                                    data-acsb-action-group="" data-acsb-action-message=""
+                                    data-acsb-action-css-property="" data-acsb-action-specific-element=""
+                                    data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-font"></i> <span
+                                            class="acsb-box-title">Readable Font</span> </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-emphasizeTitles " role="button"
+                                    aria-pressed="false" tabindex="0" data-acsb-action="emphasizeTitles"
+                                    data-acsb-action-group="" data-acsb-action-message=""
+                                    data-acsb-action-css-property="" data-acsb-action-specific-element=""
+                                    data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-heading"></i>
+                                        <span class="acsb-box-title">Highlight Titles</span> </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-emphasizeLinks " role="button"
+                                    aria-pressed="false" tabindex="0" data-acsb-action="emphasizeLinks"
+                                    data-acsb-action-group="" data-acsb-action-message=""
+                                    data-acsb-action-css-property="" data-acsb-action-specific-element=""
+                                    data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-link"></i> <span
+                                            class="acsb-box-title">Highlight Links</span> </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-magnifier " role="button"
+                                    aria-pressed="false" tabindex="0" data-acsb-action="magnifier"
+                                    data-acsb-action-group="" data-acsb-action-message=""
+                                    data-acsb-action-css-property="" data-acsb-action-specific-element=""
+                                    data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-magnifier"></i>
+                                        <span class="acsb-box-title">Text Magnifier</span>
+                                    </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-fontSize acsb-action-box-big " tabindex="0"
+                                    data-acsb-action="fontSize" data-acsb-action-group="" data-acsb-action-message=""
+                                    data-acsb-action-css-property="font-size" data-acsb-action-specific-element=""
+                                    data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-size"></i> <span
+                                            class="acsb-box-title">Adjust Font Sizing</span> </div>
+                                    <div class="acsb-big-box-element acsb-big-box-element-range">
+                                        <div class="acsb-range" data-acsb-range-slider="">
+                                            <div class="acsb-range-plus acsb-range-button acsb-bg-lead"
+                                                data-acsb-range-action="increase" role="button" tabindex="0"
+                                                aria-label="Increase"> <i class="acsbi-chevron_up"></i> </div>
+                                            <div class="acsb-range-base acsb-color-lead"
+                                                data-acsb-range-current-number="" data-acsb-range-default="Default">
+                                                Default </div>
+                                            <div class="acsb-range-minus acsb-range-button acsb-bg-lead"
+                                                data-acsb-range-action="decrease" tabindex="0" aria-label="Decrease"
+                                                role="button"> <i class="acsbi-chevron_down"></i> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-textAlignCenter " role="button"
+                                    aria-pressed="false" tabindex="0" data-acsb-action="textAlignCenter"
+                                    data-acsb-action-group="textAlign" data-acsb-action-message=""
+                                    data-acsb-action-css-property="" data-acsb-action-specific-element=""
+                                    data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i
+                                            class="acsb-box-icon acsbi-text_center"></i>
+                                        <span class="acsb-box-title">Align Center</span>
+                                    </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-lineHeight acsb-action-box-big "
+                                    tabindex="0" data-acsb-action="lineHeight" data-acsb-action-group=""
+                                    data-acsb-action-message="" data-acsb-action-css-property="line-height"
+                                    data-acsb-action-specific-element="" data-acsb-action-specific-increment="0.1">
+                                    <div class="acsb-action-box-content"> <i
+                                            class="acsb-box-icon acsbi-line_height"></i>
+                                        <span class="acsb-box-title">Adjust Line Height</span>
+                                    </div>
+                                    <div class="acsb-big-box-element acsb-big-box-element-range">
+                                        <div class="acsb-range" data-acsb-range-slider="">
+                                            <div class="acsb-range-plus acsb-range-button acsb-bg-lead"
+                                                data-acsb-range-action="increase" role="button" tabindex="0"
+                                                aria-label="Increase"> <i class="acsbi-chevron_up"></i> </div>
+                                            <div class="acsb-range-base acsb-color-lead"
+                                                data-acsb-range-current-number="" data-acsb-range-default="Default">
+                                                Default </div>
+                                            <div class="acsb-range-minus acsb-range-button acsb-bg-lead"
+                                                data-acsb-range-action="decrease" tabindex="0" aria-label="Decrease"
+                                                role="button"> <i class="acsbi-chevron_down"></i> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-textAlignLeft " role="button"
+                                    aria-pressed="false" tabindex="0" data-acsb-action="textAlignLeft"
+                                    data-acsb-action-group="textAlign" data-acsb-action-message=""
+                                    data-acsb-action-css-property="" data-acsb-action-specific-element=""
+                                    data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-text_left"></i>
+                                        <span class="acsb-box-title">Align Left</span>
+                                    </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-letterSpacing acsb-action-box-big "
+                                    tabindex="0" data-acsb-action="letterSpacing" data-acsb-action-group=""
+                                    data-acsb-action-message="" data-acsb-action-css-property="letter-spacing"
+                                    data-acsb-action-specific-element="" data-acsb-action-specific-increment="2">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-space"></i>
+                                        <span class="acsb-box-title">Adjust Letter Spacing</span> </div>
+                                    <div class="acsb-big-box-element acsb-big-box-element-range">
+                                        <div class="acsb-range" data-acsb-range-slider="">
+                                            <div class="acsb-range-plus acsb-range-button acsb-bg-lead"
+                                                data-acsb-range-action="increase" role="button" tabindex="0"
+                                                aria-label="Increase"> <i class="acsbi-chevron_up"></i> </div>
+                                            <div class="acsb-range-base acsb-color-lead"
+                                                data-acsb-range-current-number="" data-acsb-range-default="Default">
+                                                Default </div>
+                                            <div class="acsb-range-minus acsb-range-button acsb-bg-lead"
+                                                data-acsb-range-action="decrease" tabindex="0" aria-label="Decrease"
+                                                role="button"> <i class="acsbi-chevron_down"></i> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-textAlignRight acsb-action-box-hide-mobile"
+                                    role="button" aria-pressed="false" tabindex="0" data-acsb-action="textAlignRight"
+                                    data-acsb-action-group="textAlign" data-acsb-action-message=""
+                                    data-acsb-action-css-property="" data-acsb-action-specific-element=""
+                                    data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-text_right"></i>
+                                        <span class="acsb-box-title">Align Right</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="acsb-actions-box acsb-actions-box-colorAdjustments"
+                            data-acsb-actions-box="colorAdjustments">
+                            <div class="acsb-actions-title">Color Adjustments</div>
+                            <div class="acsb-actions-group">
+                                <div class="acsb-action-box acsb-action-box-darkContrast " role="button"
+                                    aria-pressed="false" tabindex="0" data-acsb-action="darkContrast"
+                                    data-acsb-action-group="contrast" data-acsb-action-message=""
+                                    data-acsb-action-css-property="" data-acsb-action-specific-element=""
+                                    data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-dark"></i> <span
+                                            class="acsb-box-title">Dark Contrast</span> </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-lightContrast " role="button"
+                                    aria-pressed="false" tabindex="0" data-acsb-action="lightContrast"
+                                    data-acsb-action-group="contrast" data-acsb-action-message=""
+                                    data-acsb-action-css-property="" data-acsb-action-specific-element=""
+                                    data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-light"></i>
+                                        <span class="acsb-box-title">Light Contrast</span> </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-monochrome " role="button"
+                                    aria-pressed="false" tabindex="0" data-acsb-action="monochrome"
+                                    data-acsb-action-group="contrast" data-acsb-action-message=""
+                                    data-acsb-action-css-property="" data-acsb-action-specific-element=""
+                                    data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-monochrome"></i>
+                                        <span class="acsb-box-title">Monochrome</span>
+                                    </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-highSaturation " role="button"
+                                    aria-pressed="false" tabindex="0" data-acsb-action="highSaturation"
+                                    data-acsb-action-group="contrast" data-acsb-action-message=""
+                                    data-acsb-action-css-property="" data-acsb-action-specific-element=""
+                                    data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-saturation"></i>
+                                        <span class="acsb-box-title">High Saturation</span>
+                                    </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-textColor acsb-action-box-big " tabindex="0"
+                                    data-acsb-action="textColor" data-acsb-action-group="" data-acsb-action-message=""
+                                    data-acsb-action-css-property="" data-acsb-action-specific-element=""
+                                    data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-picker"></i>
+                                        <span class="acsb-box-title">Adjust Text Colors</span> </div>
+                                    <div class="acsb-big-box-element acsb-big-box-element-color">
+                                        <div class="acsb-color-box"> <span data-acsb-color="#0076B4"
+                                                class="acsb-color-selection" role="button" tabindex="0"
+                                                aria-label="Change Color to Blue"
+                                                data-acsb-tooltip="Change Color to Blue"
+                                                style="background-color: #0076B4 !important;"> </span> <span
+                                                data-acsb-color="#7A549C" class="acsb-color-selection" role="button"
+                                                tabindex="0" aria-label="Change Color to Purple"
+                                                data-acsb-tooltip="Change Color to Purple"
+                                                style="background-color: #7A549C !important;"> </span> <span
+                                                data-acsb-color="#C83733" class="acsb-color-selection" role="button"
+                                                tabindex="0" aria-label="Change Color to Red"
+                                                data-acsb-tooltip="Change Color to Red"
+                                                style="background-color: #C83733 !important;"> </span> <span
+                                                data-acsb-color="#D07021" class="acsb-color-selection" role="button"
+                                                tabindex="0" aria-label="Change Color to Orange"
+                                                data-acsb-tooltip="Change Color to Orange"
+                                                style="background-color: #D07021 !important;"> </span> <span
+                                                data-acsb-color="#26999F" class="acsb-color-selection" role="button"
+                                                tabindex="0" aria-label="Change Color to Teal"
+                                                data-acsb-tooltip="Change Color to Teal"
+                                                style="background-color: #26999F !important;"> </span> <span
+                                                data-acsb-color="#4D7831" class="acsb-color-selection" role="button"
+                                                tabindex="0" aria-label="Change Color to Green"
+                                                data-acsb-tooltip="Change Color to Green"
+                                                style="background-color: #4D7831 !important;"> </span> <span
+                                                data-acsb-color="#ffffff" class="acsb-color-selection" role="button"
+                                                tabindex="0" aria-label="Change Color to WHITE"
+                                                data-acsb-tooltip="Change Color to WHITE"
+                                                style="background-color: #ffffff !important;"> </span> <span
+                                                data-acsb-color="#000000" class="acsb-color-selection" role="button"
+                                                tabindex="0" aria-label="Change Color to Black"
+                                                data-acsb-tooltip="Change Color to Black"
+                                                style="background-color: #000000 !important;"> </span>
+                                            <div class="disable" role="button" tabindex="0" data-acsb-color="disable">
+                                                Cancel </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-highContrast " role="button"
+                                    aria-pressed="false" tabindex="0" data-acsb-action="highContrast"
+                                    data-acsb-action-group="contrast" data-acsb-action-message=""
+                                    data-acsb-action-css-property="" data-acsb-action-specific-element=""
+                                    data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-contrast"></i>
+                                        <span class="acsb-box-title">High Contrast</span> </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-titleColor acsb-action-box-big "
+                                    tabindex="0" data-acsb-action="titleColor" data-acsb-action-group=""
+                                    data-acsb-action-message="" data-acsb-action-css-property=""
+                                    data-acsb-action-specific-element="" data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-picker"></i>
+                                        <span class="acsb-box-title">Adjust Title Colors</span> </div>
+                                    <div class="acsb-big-box-element acsb-big-box-element-color">
+                                        <div class="acsb-color-box"> <span data-acsb-color="#0076B4"
+                                                class="acsb-color-selection" role="button" tabindex="0"
+                                                aria-label="Change Color to Blue"
+                                                data-acsb-tooltip="Change Color to Blue"
+                                                style="background-color: #0076B4 !important;"> </span> <span
+                                                data-acsb-color="#7A549C" class="acsb-color-selection" role="button"
+                                                tabindex="0" aria-label="Change Color to Purple"
+                                                data-acsb-tooltip="Change Color to Purple"
+                                                style="background-color: #7A549C !important;"> </span> <span
+                                                data-acsb-color="#C83733" class="acsb-color-selection" role="button"
+                                                tabindex="0" aria-label="Change Color to Red"
+                                                data-acsb-tooltip="Change Color to Red"
+                                                style="background-color: #C83733 !important;"> </span> <span
+                                                data-acsb-color="#D07021" class="acsb-color-selection" role="button"
+                                                tabindex="0" aria-label="Change Color to Orange"
+                                                data-acsb-tooltip="Change Color to Orange"
+                                                style="background-color: #D07021 !important;"> </span> <span
+                                                data-acsb-color="#26999F" class="acsb-color-selection" role="button"
+                                                tabindex="0" aria-label="Change Color to Teal"
+                                                data-acsb-tooltip="Change Color to Teal"
+                                                style="background-color: #26999F !important;"> </span> <span
+                                                data-acsb-color="#4D7831" class="acsb-color-selection" role="button"
+                                                tabindex="0" aria-label="Change Color to Green"
+                                                data-acsb-tooltip="Change Color to Green"
+                                                style="background-color: #4D7831 !important;"> </span> <span
+                                                data-acsb-color="#ffffff" class="acsb-color-selection" role="button"
+                                                tabindex="0" aria-label="Change Color to WHITE"
+                                                data-acsb-tooltip="Change Color to WHITE"
+                                                style="background-color: #ffffff !important;"> </span> <span
+                                                data-acsb-color="#000000" class="acsb-color-selection" role="button"
+                                                tabindex="0" aria-label="Change Color to Black"
+                                                data-acsb-tooltip="Change Color to Black"
+                                                style="background-color: #000000 !important;"> </span>
+                                            <div class="disable" role="button" tabindex="0" data-acsb-color="disable">
+                                                Cancel </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-lowSaturation " role="button"
+                                    aria-pressed="false" tabindex="0" data-acsb-action="lowSaturation"
+                                    data-acsb-action-group="contrast" data-acsb-action-message=""
+                                    data-acsb-action-css-property="" data-acsb-action-specific-element=""
+                                    data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-invert"></i>
+                                        <span class="acsb-box-title">Low Saturation</span> </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-backgroundColor acsb-action-box-big "
+                                    tabindex="0" data-acsb-action="backgroundColor" data-acsb-action-group=""
+                                    data-acsb-action-message="" data-acsb-action-css-property=""
+                                    data-acsb-action-specific-element="" data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-picker"></i>
+                                        <span class="acsb-box-title">Adjust Background Colors</span> </div>
+                                    <div class="acsb-big-box-element acsb-big-box-element-color">
+                                        <div class="acsb-color-box"> <span data-acsb-color="#0076B4"
+                                                class="acsb-color-selection" role="button" tabindex="0"
+                                                aria-label="Change Color to Blue"
+                                                data-acsb-tooltip="Change Color to Blue"
+                                                style="background-color: #0076B4 !important;"> </span> <span
+                                                data-acsb-color="#7A549C" class="acsb-color-selection" role="button"
+                                                tabindex="0" aria-label="Change Color to Purple"
+                                                data-acsb-tooltip="Change Color to Purple"
+                                                style="background-color: #7A549C !important;"> </span> <span
+                                                data-acsb-color="#C83733" class="acsb-color-selection" role="button"
+                                                tabindex="0" aria-label="Change Color to Red"
+                                                data-acsb-tooltip="Change Color to Red"
+                                                style="background-color: #C83733 !important;"> </span> <span
+                                                data-acsb-color="#D07021" class="acsb-color-selection" role="button"
+                                                tabindex="0" aria-label="Change Color to Orange"
+                                                data-acsb-tooltip="Change Color to Orange"
+                                                style="background-color: #D07021 !important;"> </span> <span
+                                                data-acsb-color="#26999F" class="acsb-color-selection" role="button"
+                                                tabindex="0" aria-label="Change Color to Teal"
+                                                data-acsb-tooltip="Change Color to Teal"
+                                                style="background-color: #26999F !important;"> </span> <span
+                                                data-acsb-color="#4D7831" class="acsb-color-selection" role="button"
+                                                tabindex="0" aria-label="Change Color to Green"
+                                                data-acsb-tooltip="Change Color to Green"
+                                                style="background-color: #4D7831 !important;"> </span> <span
+                                                data-acsb-color="#ffffff" class="acsb-color-selection" role="button"
+                                                tabindex="0" aria-label="Change Color to WHITE"
+                                                data-acsb-tooltip="Change Color to WHITE"
+                                                style="background-color: #ffffff !important;"> </span> <span
+                                                data-acsb-color="#000000" class="acsb-color-selection" role="button"
+                                                tabindex="0" aria-label="Change Color to Black"
+                                                data-acsb-tooltip="Change Color to Black"
+                                                style="background-color: #000000 !important;"> </span>
+                                            <div class="disable" role="button" tabindex="0" data-acsb-color="disable">
+                                                Cancel </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="acsb-actions-box acsb-actions-box-orientationAdjustments"
+                            data-acsb-actions-box="orientationAdjustments">
+                            <div class="acsb-actions-title">Orientation Adjustments</div>
+                            <div class="acsb-actions-group">
+                                <div class="acsb-action-box acsb-action-box-mute " role="button" aria-pressed="false"
+                                    tabindex="0" data-acsb-action="mute" data-acsb-action-group=""
+                                    data-acsb-action-message="" data-acsb-action-css-property=""
+                                    data-acsb-action-specific-element="" data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-mute"></i> <span
+                                            class="acsb-box-title">Mute Sounds</span> </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-hideImages " role="button"
+                                    aria-pressed="false" tabindex="0" data-acsb-action="hideImages"
+                                    data-acsb-action-group="" data-acsb-action-message=""
+                                    data-acsb-action-css-property="" data-acsb-action-specific-element=""
+                                    data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-image"></i>
+                                        <span class="acsb-box-title">Hide Images</span> </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-readMode acsb-action-box-hide-mobile"
+                                    role="button" aria-pressed="false" tabindex="0" data-acsb-action="readMode"
+                                    data-acsb-action-group="" data-acsb-action-message=""
+                                    data-acsb-action-css-property="" data-acsb-action-specific-element=""
+                                    data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-keyboard"></i>
+                                        <span class="acsb-box-title">Read Mode</span> </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-readingGuide acsb-action-box-hide-mobile"
+                                    role="button" aria-pressed="false" tabindex="0" data-acsb-action="readingGuide"
+                                    data-acsb-action-group="" data-acsb-action-message=""
+                                    data-acsb-action-css-property="" data-acsb-action-specific-element=""
+                                    data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-bookmark"></i>
+                                        <span class="acsb-box-title">Reading Guide</span> </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-usefulLinks acsb-action-box-big "
+                                    tabindex="0" data-acsb-action="usefulLinks" data-acsb-action-group=""
+                                    data-acsb-action-message="" data-acsb-action-css-property=""
+                                    data-acsb-action-specific-element="" data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-links"></i>
+                                        <span class="acsb-box-title">Useful Links</span> </div>
+                                    <div class="acsb-big-box-element acsb-big-box-element-selecter">
+                                        <div class="acsb-selecter" data-acsb-selecter="usefulLinks"> <select
+                                                aria-label="Useful Links">
+                                                <option selected="" disabled="" value="acsbDefault">Select an option
+                                                </option>
+                                                <option value="homepage">Home</option>
+                                                <option value="top">Header</option>
+                                                <option value="bottom">Footer</option>
+                                                <option value="content">Main Content</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-stopAnimations " role="button"
+                                    aria-pressed="false" tabindex="0" data-acsb-action="stopAnimations"
+                                    data-acsb-action-group="" data-acsb-action-message=""
+                                    data-acsb-action-css-property="" data-acsb-action-specific-element=""
+                                    data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-vibrate"></i>
+                                        <span class="acsb-box-title">Stop Animations</span> </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-readingMask acsb-action-box-hide-mobile"
+                                    role="button" aria-pressed="false" tabindex="0" data-acsb-action="readingMask"
+                                    data-acsb-action-group="" data-acsb-action-message=""
+                                    data-acsb-action-css-property="" data-acsb-action-specific-element=""
+                                    data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-overlay"></i>
+                                        <span class="acsb-box-title">Reading Mask</span> </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-emphasizeHover acsb-action-box-hide-mobile"
+                                    role="button" aria-pressed="false" tabindex="0" data-acsb-action="emphasizeHover"
+                                    data-acsb-action-group="" data-acsb-action-message=""
+                                    data-acsb-action-css-property="" data-acsb-action-specific-element=""
+                                    data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-mouse"></i>
+                                        <span class="acsb-box-title">Highlight Hover</span> </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-emphasizeFocus " role="button"
+                                    aria-pressed="false" tabindex="0" data-acsb-action="emphasizeFocus"
+                                    data-acsb-action-group="" data-acsb-action-message=""
+                                    data-acsb-action-css-property="" data-acsb-action-specific-element=""
+                                    data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-focus"></i>
+                                        <span class="acsb-box-title">Highlight Focus</span> </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-bigBlackCursor acsb-action-box-hide-mobile"
+                                    role="button" aria-pressed="false" tabindex="0" data-acsb-action="bigBlackCursor"
+                                    data-acsb-action-group="cursor" data-acsb-action-message=""
+                                    data-acsb-action-css-property="" data-acsb-action-specific-element=""
+                                    data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i
+                                            class="acsb-box-icon acsbi-cursor_full"></i>
+                                        <span class="acsb-box-title">Big Black Cursor</span>
+                                    </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-bigWhiteCursor acsb-action-box-hide-mobile"
+                                    role="button" aria-pressed="false" tabindex="0" data-acsb-action="bigWhiteCursor"
+                                    data-acsb-action-group="cursor" data-acsb-action-message=""
+                                    data-acsb-action-css-property="" data-acsb-action-specific-element=""
+                                    data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <i class="acsb-box-icon acsbi-cursor"></i>
+                                        <span class="acsb-box-title">Big White Cursor</span> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="acsb-actions-box acsb-actions-box-hiddenAdjustments"
+                            data-acsb-actions-box="hiddenAdjustments">
+                            <div class="acsb-actions-title">HIDDEN_ADJUSTMENTS</div>
+                            <div class="acsb-actions-group">
+                                <div class="acsb-action-box acsb-action-box-keynav " role="button" aria-pressed="false"
+                                    tabindex="0" data-acsb-action="keynav" data-acsb-action-group=""
+                                    data-acsb-action-message="" data-acsb-action-css-property=""
+                                    data-acsb-action-specific-element="" data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <span class="acsb-box-title">Keyboard
+                                            Navigation</span> </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-accessMode " role="button"
+                                    aria-pressed="false" tabindex="0" data-acsb-action="accessMode"
+                                    data-acsb-action-group="" data-acsb-action-message=""
+                                    data-acsb-action-css-property="" data-acsb-action-specific-element=""
+                                    data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <span class="acsb-box-title">Accessible
+                                            Mode</span> </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-screenReader " role="button"
+                                    aria-pressed="false" tabindex="0" data-acsb-action="screenReader"
+                                    data-acsb-action-group="" data-acsb-action-message=""
+                                    data-acsb-action-css-property="" data-acsb-action-specific-element=""
+                                    data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <span class="acsb-box-title">Screen Reader
+                                            Adjustments</span> </div>
+                                </div>
+                                <div class="acsb-action-box acsb-action-box-readMode " role="button"
+                                    aria-pressed="false" tabindex="0" data-acsb-action="readMode"
+                                    data-acsb-action-group="" data-acsb-action-message=""
+                                    data-acsb-action-css-property="" data-acsb-action-specific-element=""
+                                    data-acsb-action-specific-increment="0">
+                                    <div class="acsb-action-box-content"> <span class="acsb-box-title">Read Mode</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="acsb-footer acsb-flex acsb-flex-center" data-acsb-footer="true"> <a rel="noopener"
+                    data-acsb-footer-link="true" href="https://accessibe.com?utm_medium=link&amp;utm_source=widget"
+                    target="_blank"> Web Accessibility Solution By accessiBe </a>
+            </div>
+            <div class="acsb-popup acsb-language-popup" tabindex="0" data-acsb-popup="acsb-language-popup">
+                <div class="acsb-popup-close-wide" data-acsb-popup-close="acsb-language-popup"></div>
+                <div class="acsb-popup-content" role="dialog"> <span class="acsb-popup-close" tabindex="0" role="button"
+                        aria-label="Close" data-acsb-popup-close="acsb-language-popup"> <i class="acsbi-close"></i>
+                    </span>
+                    <div class="acsb-popup-content-holder" data-acsb-popup-content-holder="">
+                        <div class="acsb-language-selection"> <span class="acsb-popup-title">Choose the Interface
+                                Language</span>
+                            <div class="acsb-languages acsb-flex">
+                                <div class="acsb-language" role="button" tabindex="0" data-acsb-language="en"> <span
+                                        class="acsb-language-flag"> <span
+                                            data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/en.svg"
+                                            data-acsb-lazy-load-options="alt=English"></span> </span> <span
+                                        class="acsb-language-text">English</span> </div>
+                                <div class="acsb-language" role="button" tabindex="0" data-acsb-language="es"> <span
+                                        class="acsb-language-flag"> <span
+                                            data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/es.svg"
+                                            data-acsb-lazy-load-options="alt=Español"></span> </span> <span
+                                        class="acsb-language-text">Español</span> </div>
+                                <div class="acsb-language" role="button" tabindex="0" data-acsb-language="de"> <span
+                                        class="acsb-language-flag"> <span
+                                            data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/de.svg"
+                                            data-acsb-lazy-load-options="alt=Deutsch"></span> </span> <span
+                                        class="acsb-language-text">Deutsch</span> </div>
+                                <div class="acsb-language" role="button" tabindex="0" data-acsb-language="pt"> <span
+                                        class="acsb-language-flag"> <span
+                                            data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/pt.svg"
+                                            data-acsb-lazy-load-options="alt=Português"></span> </span> <span
+                                        class="acsb-language-text">Português</span> </div>
+                                <div class="acsb-language" role="button" tabindex="0" data-acsb-language="fr"> <span
+                                        class="acsb-language-flag"> <span
+                                            data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/fr.svg"
+                                            data-acsb-lazy-load-options="alt=Français"></span> </span> <span
+                                        class="acsb-language-text">Français</span> </div>
+                                <div class="acsb-language" role="button" tabindex="0" data-acsb-language="it"> <span
+                                        class="acsb-language-flag"> <span
+                                            data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/it.svg"
+                                            data-acsb-lazy-load-options="alt=Italiano"></span> </span> <span
+                                        class="acsb-language-text">Italiano</span> </div>
+                                <div class="acsb-language" role="button" tabindex="0" data-acsb-language="he"> <span
+                                        class="acsb-language-flag"> <span
+                                            data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/he.svg"
+                                            data-acsb-lazy-load-options="alt=עברית"></span> </span> <span
+                                        class="acsb-language-text">עברית</span> </div>
+                                <div class="acsb-language" role="button" tabindex="0" data-acsb-language="tw"> <span
+                                        class="acsb-language-flag"> <span
+                                            data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/tw.svg"
+                                            data-acsb-lazy-load-options="alt=繁體中文"></span> </span> <span
+                                        class="acsb-language-text">繁體中文</span> </div>
+                                <div class="acsb-language" role="button" tabindex="0" data-acsb-language="ru"> <span
+                                        class="acsb-language-flag"> <span
+                                            data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/ru.svg"
+                                            data-acsb-lazy-load-options="alt=Pусский"></span> </span> <span
+                                        class="acsb-language-text">Pусский</span> </div>
+                                <div class="acsb-language" role="button" tabindex="0" data-acsb-language="ar"> <span
+                                        class="acsb-language-flag"> <span
+                                            data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/ar.svg"
+                                            data-acsb-lazy-load-options="alt=عربى"></span> </span> <span
+                                        class="acsb-language-text">عربى</span> </div>
+                                <div class="acsb-language" role="button" tabindex="0" data-acsb-language="ua"> <span
+                                        class="acsb-language-flag"> <span
+                                            data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/ua.svg"
+                                            data-acsb-lazy-load-options="alt=عربى"></span> </span> <span
+                                        class="acsb-language-text">عربى</span> </div>
+                                <div class="acsb-language" role="button" tabindex="0" data-acsb-language="nl"> <span
+                                        class="acsb-language-flag"> <span
+                                            data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/nl.svg"
+                                            data-acsb-lazy-load-options="alt=Nederlands"></span> </span> <span
+                                        class="acsb-language-text">Nederlands</span> </div>
+                                <div class="acsb-language" role="button" tabindex="0" data-acsb-language="zh"> <span
+                                        class="acsb-language-flag"> <span
+                                            data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/zh.svg"
+                                            data-acsb-lazy-load-options="alt=繁體中文"></span> </span> <span
+                                        class="acsb-language-text">繁體中文</span> </div>
+                                <div class="acsb-language" role="button" tabindex="0" data-acsb-language="ja"> <span
+                                        class="acsb-language-flag"> <span
+                                            data-acsb-lazy-load="https://web1.acsbapp.com/apps/app/dist/media/languages/ja.svg"
+                                            data-acsb-lazy-load-options="alt=日本語"></span> </span> <span
+                                        class="acsb-language-text">日本語</span> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="acsb-popup acsb-statement-popup" tabindex="0" data-acsb-popup="acsb-statement-popup">
+                <div class="acsb-popup-close-wide" data-acsb-popup-close="acsb-statement-popup"></div>
+                <div class="acsb-popup-content" role="dialog"> <span class="acsb-popup-close" tabindex="0" role="button"
+                        aria-label="Close" data-acsb-popup-close="acsb-statement-popup"> <i class="acsbi-close"></i>
+                    </span>
+                    <div class="acsb-popup-content-holder" data-acsb-popup-content-holder="">
+                        <div class="acsb-statement"><strong class="acsb-title-main">Accessibility
+                                Statement</strong><strong class="acsb-title">Compliance status</strong>
+                            <p>We firmly believe that the internet should be available and accessible to anyone and are
+                                committed to providing a website that is accessible to the broadest possible audience,
+                                regardless of ability.</p>
+                            <p>To fulfill this, we aim to adhere as strictly as possible to the World Wide Web
+                                Consortium’s
+                                (W3C) Web Content Accessibility Guidelines 2.1 (WCAG 2.1) at the AA level. These
+                                guidelines
+                                explain how to make web content accessible to people with a wide array of disabilities.
+                                Complying with those guidelines helps us ensure that the website is accessible to blind
+                                people, people with motor impairments, visual impairment, cognitive disabilities, and
+                                more.
+                            </p>
+                            <p>This website utilizes various technologies that are meant to make it as accessible as
+                                possible at all times. We utilize an accessibility interface that allows persons with
+                                specific disabilities to adjust the website’s UI (user interface) and design it to their
+                                personal needs.</p>
+                            <p>Additionally, the website utilizes an AI-based application that runs in the background
+                                and
+                                optimizes its accessibility level constantly. This application remediates the website’s
+                                HTML, adapts its functionality and behavior for screen-readers used by blind users, and
+                                for
+                                keyboard functions used by individuals with motor impairments.</p>
+                            <p>If you wish to contact the website’s owner please use the website's form</p>
+                            <strong class="acsb-title">Screen-reader and keyboard navigation</strong>
+                            <p>Our website implements the ARIA attributes (Accessible Rich Internet Applications)
+                                technique,
+                                alongside various behavioral changes, to ensure blind users visiting with screen-readers
+                                can
+                                read, comprehend, and enjoy the website’s functions. As soon as a user with a
+                                screen-reader
+                                enters your site, they immediately receive a prompt to enter the Screen-Reader Profile
+                                so
+                                they can browse and operate your site effectively. Here’s how our website covers some of
+                                the
+                                most important screen-reader requirements:</p>
+                            <ol>
+                                <li><strong class="acsb-title">Screen-reader optimization:&nbsp;</strong>we run a
+                                    process
+                                    that learns the website’s components from top to bottom, to ensure ongoing
+                                    compliance
+                                    even when updating the website. In this process, we provide screen-readers with
+                                    meaningful data using the ARIA set of attributes. For example, we provide accurate
+                                    form
+                                    labels; descriptions for actionable icons (social media icons, search icons, cart
+                                    icons,
+                                    etc.); validation guidance for form inputs; element roles such as buttons, menus,
+                                    modal
+                                    dialogues (popups), and others.&nbsp;<br><br>Additionally, the background process
+                                    scans
+                                    all of the website’s images. It provides an accurate and meaningful
+                                    image-object-recognition-based description as an ALT (alternate text) tag for images
+                                    that are not described. It will also extract texts embedded within the image using
+                                    an
+                                    OCR (optical character recognition) technology. To turn on screen-reader adjustments
+                                    at
+                                    any time, users need only to press the Alt+1 keyboard combination. Screen-reader
+                                    users
+                                    also get automatic announcements to turn the Screen-reader mode on as soon as they
+                                    enter
+                                    the website.<br><br>These adjustments are compatible with popular screen readers
+                                    such as
+                                    JAWS, NVDA, VoiceOver, and TalkBack.<br><br></li>
+                                <li><strong class="acsb-title">Keyboard navigation optimization:&nbsp;</strong>The
+                                    background process also adjusts the website’s HTML and adds various behaviors using
+                                    JavaScript code to make the website operable by the keyboard. This includes the
+                                    ability
+                                    to navigate the website using the Tab and Shift+Tab keys, operate dropdowns with the
+                                    arrow keys, close them with Esc, trigger buttons and links using the Enter key,
+                                    navigate
+                                    between radio and checkbox elements using the arrow keys, and fill them in with the
+                                    Spacebar or Enter key.<br><br>Additionally, keyboard users will find content-skip
+                                    menus
+                                    available at any time by clicking Alt+2, or as the first element of the site while
+                                    navigating with the keyboard. The background process also handles triggered popups
+                                    by
+                                    moving the keyboard focus towards them as soon as they appear, not allowing the
+                                    focus to
+                                    drift outside.<br><br>Users can also use shortcuts such as “M” (menus), “H”
+                                    (headings),
+                                    “F” (forms), “B” (buttons), and “G” (graphics) to jump to specific elements.</li>
+                            </ol>
+                            <strong style="border-color: var(--mce-guidelines);"><span lang="EN-US">Disability profiles
+                                    supported on our website</span></strong>
+                            <ul>
+                                <li><strong class="acsb-title">Epilepsy Safe Profile:</strong> this profile enables
+                                    people
+                                    with epilepsy to safely use the website by eliminating the risk of seizures
+                                    resulting
+                                    from flashing or blinking animations and risky color combinations.</li>
+                                <li><strong class="acsb-title">Vision Impaired Profile:</strong> this profile adjusts
+                                    the
+                                    website so that it is accessible to the majority of visual impairments such as
+                                    Degrading
+                                    Eyesight, Tunnel Vision, Cataract, Glaucoma, and others.</li>
+                                <li><strong class="acsb-title">Cognitive Disability Profile:</strong> this profile
+                                    provides
+                                    various assistive features to help users with cognitive disabilities such as Autism,
+                                    Dyslexia, CVA, and others, to focus on the essential elements more easily.</li>
+                                <li><strong class="acsb-title">ADHD Friendly Profile</strong>: this profile
+                                    significantly
+                                    reduces distractions and noise to help people with ADHD, and Neurodevelopmental
+                                    disorders browse, read, and focus on the essential elements more easily.</li>
+                                <li><strong class="acsb-title">Blind Users Profile (Screen-readers):</strong> this
+                                    profile
+                                    adjusts the website to be compatible with screen-readers such as JAWS, NVDA,
+                                    VoiceOver,
+                                    and TalkBack. A screen-reader is installed on the blind user’s computer, and this
+                                    site
+                                    is compatible with it.</li>
+                                <li><strong class="acsb-title">Keyboard Navigation Profile (Motor-Impaired):</strong>
+                                    this
+                                    profile enables motor-impaired persons to operate the website using the keyboard
+                                    Tab,
+                                    Shift+Tab, and the Enter keys. Users can also use shortcuts such as “M” (menus), “H”
+                                    (headings), “F” (forms), “B” (buttons), and “G” (graphics) to jump to specific
+                                    elements.
+                                </li>
+                            </ul>
+                            <strong class="acsb-title"><span lang="EN-US">Additional UI, design, and readability
+                                    adjustments</span></strong>
+                            <ol>
+                                <li><strong class="acsb-title"><span lang="EN-US">Font&nbsp;adjustments
+                                        </span>–</strong><span lang="EN-US">&nbsp;users can increase and decrease its
+                                        size,
+                                        change its family (type), adjust the spacing,&nbsp;alignment, line
+                                        height,&nbsp;and
+                                        more.</span></li>
+                                <li><span lang="EN-US"><strong class="acsb-title">Color&nbsp;adjustments
+                                            –</strong>&nbsp;</span><span lang="EN-US">users can select various color
+                                        contrast profiles such as light, dark, inverted, and monochrome. Additionally,
+                                        users
+                                        can swap color schemes of titles, texts, and backgrounds with over seven
+                                        different
+                                        coloring options.</span></li>
+                                <li><span lang="EN-US"><strong class="acsb-title">Animations
+                                            –</strong>&nbsp;</span>epileptic users can stop all running animations with
+                                    the
+                                    click of a button. Animations controlled by the interface include videos, GIFs, and
+                                    CSS
+                                    flashing transitions.</li>
+                                <li><span lang="EN-US"><strong class="acsb-title">Content&nbsp;highlighting
+                                            –</strong>&nbsp;</span><span lang="EN-US">users can choose to emphasize
+                                        essential elements such as links and titles. They can also choose to highlight
+                                        focused or hovered elements only.</span></li>
+                                <li><span lang="EN-US"><strong class="acsb-title">Audio
+                                            muting&nbsp;–</strong>&nbsp;</span><span lang="EN-US">users with hearing
+                                        devices
+                                        may experience headaches or other issues due to automatic audio playing. This
+                                        option
+                                        lets users mute the entire website instantly.</span></li>
+                                <li><span lang="EN-US"><strong class="acsb-title">Cognitive&nbsp;disorders
+                                            –</strong>&nbsp;</span><span lang="EN-US">we utilize a search engine linked
+                                        to
+                                        Wikipedia and Wiktionary, allowing people with cognitive disorders to decipher
+                                        meanings of phrases, initials, slang, and others.</span></li>
+                                <li><strong class="acsb-title"><span lang="EN-US">Additional
+                                            functions&nbsp;</span></strong><span lang="EN-US"><strong
+                                            class="acsb-title">–</strong> we allow users to change cursor color and
+                                        size,
+                                        use a printing mode, enable a virtual keyboard, and many other functions.</span>
+                                </li>
+                            </ol>
+                            <strong class="acsb-title">Assistive technology and browser compatibility</strong>
+                            <p>We aim to support as many browsers and assistive technologies as possible, so our users
+                                can
+                                choose the best fitting tools for them, with as few limitations as possible. Therefore,
+                                we
+                                have worked very hard to be able to support all major systems that comprise over 95% of
+                                the
+                                user market share, including Google Chrome, Mozilla Firefox, Apple Safari, Opera and
+                                Microsoft Edge, JAWS, and NVDA (screen readers), both for Windows and MAC users.</p>
+                            <strong class="acsb-title">Notes, comments, and feedback</strong>
+                            <p>Despite our very best efforts to allow anybody to adjust the website to their needs,
+                                there
+                                may still be pages or sections that are not fully accessible, are in the process of
+                                becoming
+                                accessible, or are lacking an adequate technological solution to make them accessible.
+                                Still, we are continually improving our accessibility, adding, updating, improving its
+                                options and features, and developing and adopting new technologies. All this is meant to
+                                reach the optimal level of accessibility following technological advancements. If you
+                                wish
+                                to contact the website’s owner, please use the website's form</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="acsb-popup acsb-hide-popup" tabindex="0" data-acsb-popup="acsb-hide-popup">
+                <div class="acsb-popup-close-wide" data-acsb-popup-close="acsb-hide-popup"></div>
+                <div class="acsb-popup-content" role="dialog"> <span class="acsb-popup-close" tabindex="0" role="button"
+                        aria-label="Close" data-acsb-popup-close="acsb-hide-popup"> <i class="acsbi-close"></i> </span>
+                    <div class="acsb-popup-content-holder" data-acsb-popup-content-holder="">
+                        <div class="acsb-hide"> <span class="acsb-title">Hide Accessibility Interface?</span> <span
+                                class="acsb-text">Please note: If you choose to hide the accessibility interface, you
+                                won't
+                                be able to see it anymore, unless you clear your browsing history and data. Are you sure
+                                that you wish to hide the interface?</span>
+                            <div class="acsb-buttons"> <span role="button" tabindex="0"
+                                    class="acsb-button acsb-button-colorized" data-acsb-option="hide">Accept</span>
+                                <span role="button" tabindex="0" class="acsb-button"
+                                    data-acsb-popup-close="acsb-hide-popup">Cancel</span> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="acsb-popup acsb-message-popup" tabindex="0" data-acsb-popup="acsb-message-popup">
+                <div class="acsb-popup-close-wide" data-acsb-popup-close="acsb-message-popup"></div>
+                <div class="acsb-popup-content" role="dialog"> <span class="acsb-popup-close" tabindex="0" role="button"
+                        aria-label="Close" data-acsb-popup-close="acsb-message-popup"> <i class="acsbi-close"></i>
+                    </span>
+                    <div class="acsb-popup-content-holder" data-acsb-popup-content-holder="">
+                        <div class="acsb-popup-message-actual" data-acsb-popup-message-actual=""></div>
+                        <span class="acsb-button" data-acsb-popup-close="acsb-message-popup" role="button" tabindex="0">
+                            Continue</span>
+                    </div>
+                </div>
+            </div>
+            <div class="acsb-loader" data-acsb-loader="">
+                <div class="acsb-loader-block acsb-bg-lead"> <span class="acsb-loader-actual"></span> <i
+                        class="acsbi-checkmark"></i> </div>
+            </div>
+            <div class="acsb-loader-overlay"></div>
+        </div>
+        <div data-acsb="blocker" data-acsb-option="close" class="acsb-widget-blocker acsb-ready" style="display: none;">
+        </div>
+        <div data-acsb="processor" class="acsb-processor acsb-ready" style="display: none;">
+            <div class="acsb-loader" data-acsb-loader="">
+                <div class="acsb-loader-block"> <span class="acsb-loader-actual"></span> <span
+                        class="acsb-loader-content">Processing the data, please give it a few seconds...</span> </div>
+            </div>
+        </div>
+        <div class="h-dashboard-innr">
+            <div class="container-fluid">
+                <div class="main-card">
+                    <div class="col-md-12 p-0 pl-xl-3 pr-xl-3">
+                        <div class="row">
+                            <div class="col-xl-12 col-sm-12">
+                                <div class="row">
+                                    <div class="col-xl-3 col-md-4">
+                                        <div class="card cstm-card tab-card">
+                                            <div class="cardheader">
+                                                <a class="c-heading" href="/">Projects</a>
+                                                <a href="/">
+                                                    <button
+                                                        class="btn btn-success btn-cstm waves-effect waves-light">Create</button>
+                                                </a>
+                                            </div>
+                                            <ul class="nav nav-tabs" id="projectsTab" role="tablist">
+                                                <li class="nav-item waves-effect waves-light">
+                                                    <a class="nav-link active" id="uProjects-tab" data-toggle="tab"
+                                                        href="/" role="tab" aria-controls="uProjects"
+                                                        aria-selected="true">My Projects
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item waves-effect waves-light">
+                                                    <a class="nav-link" id="uProjectsInvite-tab" data-toggle="tab"
+                                                        href="/" role="tab" aria-controls="uProjectsInvite"
+                                                        aria-selected="false">Invited
+                                                    </a>
+                                                </li>
+                                            </ul>
+
+                                            <div class="add-usr-project-tab">
+                                                <div class="slimScrollDiv"
+                                                    style="position: relative; overflow: hidden; width: auto; height: 300px;">
+                                                    <div class="tab-content project-tab-scroll"
+                                                        style="overflow: hidden; width: auto; height: 300px;">
+                                                        <div class="tab-pane active" id="uProjects" role="tabpanel"
+                                                            aria-labelledby="uProjects-tab">
+                                                            <div class="accordion d-card-accordion"
+                                                                style="max-height: 300px;height: 300px;">
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="tab-pane" id="uProjectsInvite" role="tabpanel"
+                                                            aria-labelledby="submissions-tab">
+                                                            <div class="accordion d-card-accordion"
+                                                                style="max-height: 300px;height: 300px;">
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="slimScrollBar"
+                                                        style="background: rgb(111, 192, 92) none repeat scroll 0% 0%; width: 2px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 84.5865px;">
+                                                    </div>
+                                                    <div class="slimScrollRail"
+                                                        style="width: 2px; height: 100%; position: absolute; top: 0px; border-radius: 7px; background: rgb(206, 207, 208) none repeat scroll 0% 0%; opacity: 0.2; z-index: 90; right: 1px;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-md-4">
+                                        <div class="card cstm-card tab-card">
+                                            <div class="cardheader">
+                                                <a class="c-heading" href="/">Challenges</a>
+                                            </div>
+                                            <ul class="nav nav-tabs" id="challengesTab" role="tablist">
+                                                <li class="nav-item waves-effect waves-light">
+                                                    <a class="nav-link active" id="uMyChallenges-tab" data-toggle="tab"
+                                                        href="/" role="tab" aria-controls="uMyChallenges"
+                                                        aria-selected="true">My Challenges
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item waves-effect waves-light">
+                                                    <a class="nav-link" id="uChallengesInvite-tab" data-toggle="tab"
+                                                        href="/" role="tab" aria-controls="uChallengesInvite"
+                                                        aria-selected="false">Invited
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item waves-effect waves-light">
+                                                    <a class="nav-link" id="uChallengesFollow-tab" data-toggle="tab"
+                                                        href="/" role="tab" aria-controls="uChallengesFollow"
+                                                        aria-selected="false">Following
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div class="add-usr-project-tab">
+                                                <div class="slimScrollDiv"
+                                                    style="position: relative; overflow: hidden; width: auto; height: 300px;">
+                                                    <div class="tab-content project-tab-scroll"
+                                                        style="overflow: hidden; width: auto; height: 300px;">
+                                                        <div class="tab-pane active" id="uMyChallenges" role="tabpanel"
+                                                            aria-labelledby="uMyChallenges-tab">
+                                                            <div class="accordion d-card-accordion">
+                                                            </div>
+                                                        </div>
+
+                                                        <!--Start of module for users invite created my challenges listing of following Challenges  -->
+
+                                                        <div class="tab-pane" id="uChallengesFollow" role="tabpanel"
+                                                            aria-labelledby="uChallengesFollow-tab">
+                                                            <div class="accordion d-card-accordion">
+                                                            </div>
+                                                        </div>
+
+                                                        <!--End of module for users invite created my challenges listing of following Challenges  -->
+
+                                                        <div class="tab-pane" id="uChallengesInvite" role="tabpanel"
+                                                            aria-labelledby="submissions-tab">
+                                                            <div class="accordion d-card-accordion">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slimScrollBar"
+                                                        style="background: rgb(111, 192, 92) none repeat scroll 0% 0%; width: 2px; position: absolute; top: 131px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 169.173px;">
+                                                    </div>
+                                                    <div class="slimScrollRail"
+                                                        style="width: 2px; height: 100%; position: absolute; top: 0px; border-radius: 7px; background: rgb(206, 207, 208) none repeat scroll 0% 0%; opacity: 0.2; z-index: 90; right: 1px; display: none;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-md-4">
+                                        <div class="card cstm-card tab-card">
+                                            <div class="cardheader">
+                                                <a class="c-heading" href="/">Labs</a>
+                                            </div>
+                                            <ul class="nav nav-tabs" id="LabsTab" role="tablist">
+                                                <li class="nav-item waves-effect waves-light">
+                                                    <a class="nav-link active" id="needtoaccss-tab" data-toggle="tab"
+                                                        href="/" role="tab" aria-controls="needtoaccss"
+                                                        aria-selected="true">My Labs
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item waves-effect waves-light">
+                                                    <a class="nav-link" id="submissions-tab" data-toggle="tab" href="/"
+                                                        role="tab" aria-controls="submissions"
+                                                        aria-selected="false">Invited
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div class="add-usr-project-tab">
+                                                <div class="slimScrollDiv"
+                                                    style="position: relative; overflow: hidden; width: auto; height: 300px;">
+                                                    <div class="tab-content project-tab-scroll"
+                                                        style="overflow: hidden; width: auto; height: 300px;">
+                                                        <div class="tab-pane active" id="needtoaccss" role="tabpanel"
+                                                            aria-labelledby="needtoaccss-tab">
+                                                            <div class="accordion d-card-accordion">
+                                                                <div class="card">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="tab-pane" id="submissions" role="tabpanel"
+                                                            aria-labelledby="submissions-tab">
+                                                            <div class="accordion d-card-accordion">
+                                                                <div class="card">
+                                                                    <div class="card-body d-card-body">
+                                                                        <b>
+                                                                        </b>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="slimScrollBar"
+                                                        style="background: rgb(111, 192, 92) none repeat scroll 0% 0%; width: 2px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 300px;">
+                                                    </div>
+                                                    <div class="slimScrollRail"
+                                                        style="width: 2px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(206, 207, 208) none repeat scroll 0% 0%; opacity: 0.2; z-index: 90; right: 1px;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-md-4">
+                                        <div class="myinbox-card">
+                                            <div class="card cstm-card tab-card">
+                                                <div class="cardheader">
+                                                    <a class="c-heading" href="/">My Inbox</a>
+                                                </div>
+                                                <ul class="nav nav-tabs" id="projectsTab" role="tablist">
+                                                    <li class="nav-item waves-effect waves-light">
+                                                        <a class="nav-link active" id="mychat-tab" data-toggle="tab"
+                                                            href="/" role="tab" aria-controls="mychat"
+                                                            aria-selected="true">My Chats
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item waves-effect waves-light">
+                                                        <a class="nav-link" id="frndreqst-tab" data-toggle="tab"
+                                                            href="/" role="tab" aria-controls="frndreqst"
+                                                            aria-selected="false">Friend Requests
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <div class="card-innr-list add-usr-project-tab">
+                                                    <div class="slimScrollDiv"
+                                                        style="position: relative; overflow: hidden; width: auto; height: 300px;">
+                                                        <div class="tab-content mailscroll"
+                                                            style="overflow: hidden; width: auto; height: 300px;">
+                                                            <div class="tab-pane active" id="mychat" role="tabpanel"
+                                                                aria-labelledby="mychat-tab">
+                                                                <div class="">
+                                                                    <b>
+                                                                    </b>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane" id="frndreqst" role="tabpanel"
+                                                                aria-labelledby="frndreqst-tab">
+                                                            </div>
+                                                        </div>
+                                                        <div class="slimScrollBar"
+                                                            style="background: rgb(111, 192, 92) none repeat scroll 0% 0%; width: 2px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 300px;">
+                                                        </div>
+                                                        <div class="slimScrollRail"
+                                                            style="width: 2px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(206, 207, 208) none repeat scroll 0% 0%; opacity: 0.2; z-index: 90; right: 1px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-md-4">
+                                        <div class="myorganigation-card">
+                                            <div class="card cstm-card tab-card">
+                                                <div class="cardheader">
+                                                    <div class="c-heading text-gray-shade-11">Recommendations </div>
+                                                </div>
+                                                <ul class="nav nav-tabs" id="recomdationTab" role="tablist">
+                                                    <li class="nav-item waves-effect waves-light">
+                                                        <a class="nav-link active" id="recomdationLab-tab"
+                                                            data-toggle="tab" href="/" role="tab"
+                                                            aria-controls="rescomdationLab" aria-selected="true"> Labs
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item waves-effect waves-light">
+                                                        <a class="nav-link" id="recomdationChallenges-tab"
+                                                            data-toggle="tab" href="/" role="tab"
+                                                            aria-controls="recomdationChallenges"
+                                                            aria-selected="false">Challenges </a>
+                                                    </li>
+                                                    <li class="nav-item waves-effect waves-light">
+                                                        <a class="nav-link" id="recomdationResources-tab"
+                                                            data-toggle="tab" href="/" role="tab"
+                                                            aria-controls="recomdationResources"
+                                                            aria-selected="false">Resources </a>
+                                                    </li>
+                                                </ul>
+                                                <div class="add-usr-project-tab">
+                                                    <div class="slimScrollDiv"
+                                                        style="position: relative; overflow: hidden; width: auto; height: 300px;">
+                                                        <div class="tab-content project-tab-scroll"
+                                                            style="overflow: hidden; width: auto; height: 300px;">
+
+                                                            <div class="tab-pane active" id="recomdationLab"
+                                                                role="tabpanel" aria-labelledby="recomdationLab-tab">
+                                                                <div class="accordion d-card-accordion">
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="tab-pane" id="recomdationChallenges"
+                                                                role="tabpanel"
+                                                                aria-labelledby="recomdationChallenges-tab">
+                                                                <div class="accordion d-card-accordion">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="tab-pane" id="recomdationResources"
+                                                                role="tabpanel"
+                                                                aria-labelledby="recomdationResources-tab">
+                                                                <div class="accordion d-card-accordion">
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="slimScrollBar"
+                                                                style="background: rgb(111, 192, 92) none repeat scroll 0% 0%; width: 2px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 300px;">
+                                                            </div>
+                                                            <div class="slimScrollRail"
+                                                                style="width: 2px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(206, 207, 208) none repeat scroll 0% 0%; opacity: 0.2; z-index: 90; right: 1px;">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xl-9 col-md-8">
+                                        <div class="myorganigation-card discussion-card">
+                                            <div class="card cstm-card tab-card">
+                                                <div class="cardheader">
+                                                    <div class="c-heading text-gray-shade-11">Discussions</div>
+                                                </div>
+                                                <ul class="nav nav-tabs" id="recomdationTab" role="tablist">
+                                                    <li class="nav-item waves-effect waves-light">
+                                                        <a class="nav-link active" id="discutionsProject-tab"
+                                                            data-toggle="tab" href="/" role="tab"
+                                                            aria-controls="discutionsProject" aria-selected="true">
+                                                            Projects
+
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item waves-effect waves-light">
+                                                        <a class="nav-link" id="discutionsChallenges-tab"
+                                                            data-toggle="tab" href="/" role="tab"
+                                                            aria-controls="discutionsChallenges"
+                                                            aria-selected="false">Challenges
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item waves-effect waves-light">
+                                                        <a class="nav-link" id="discutionsLabs-tab" data-toggle="tab"
+                                                            href="/" role="tab" aria-controls="discutionsLabs"
+                                                            aria-selected="false">Labs
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <div class="add-usr-project-tab ">
+                                                    <div class="slimScrollDiv"
+                                                        style="position: relative; overflow: hidden; width: auto; height: 300px;">
+                                                        <div class="tab-content project-tab-scroll"
+                                                            style="overflow: hidden; width: auto; height: 300px;">
+                                                            <div class="tab-pane active" id="discutionsProject"
+                                                                role="tabpanel" aria-labelledby="discutionsProject-tab">
+                                                                <div class="accordion d-card-accordion">
+                                                                    <div class="card">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="tab-pane" id="discutionsChallenges"
+                                                                role="tabpanel"
+                                                                aria-labelledby="discutionsChallenges-tab">
+                                                                <div class="accordion d-card-accordion">
+                                                                    <div class="card">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="tab-pane" id="discutionsLabs" role="tabpanel"
+                                                                aria-labelledby="discutionsLabs-tab">
+                                                                <div class="accordion d-card-accordion">
+                                                                    <div class="card">
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="slimScrollBar"
+                                                            style="background: rgb(111, 192, 92) none repeat scroll 0% 0%; width: 2px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 206.897px;">
+                                                        </div>
+                                                        <div class="slimScrollRail"
+                                                            style="width: 2px; height: 100%; position: absolute; top: 0px; border-radius: 7px; background: rgb(206, 207, 208) none repeat scroll 0% 0%; opacity: 0.2; z-index: 90; right: 1px; display: none;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+
+        var x = 0;
+
+        function SwitchMode() {
+
+            if (x == 0) {
+
+                x = 1;
+
+                var bgc1 = document.getElementsByClassName("bg-white")
+                for (var i = 0, len = bgc1.length | 0; i < len; i = i + 1 | 0) {
+                    bgc1[i].style.backgroundColor = "#2F4F4F";
+                }
+
+                var bgc2 = document.getElementsByClassName("bg-alice-blue")
+                for (var i = 0, len = bgc2.length | 0; i < len; i = i + 1 | 0) {
+                    bgc2[i].style.backgroundColor = "#000";
+                }
+
+
+                var title1 = document.getElementsByClassName("card-title")
+                for (var i = 0, len = title1.length | 0; i < len; i = i + 1 | 0) {
+                    title1[i].style.color = "#27ae60";
+                }
+            }
+            else {
+
+                x = 0;
+
+                var bgc1 = document.getElementsByClassName("bg-white")
+                for (var i = 0, len = bgc1.length | 0; i < len; i = i + 1 | 0) {
+                    bgc1[i].style.backgroundColor = "#fff";
+                }
+
+                var bgc2 = document.getElementsByClassName("bg-alice-blue")
+                for (var i = 0, len = bgc2.length | 0; i < len; i = i + 1 | 0) {
+                    bgc2[i].style.backgroundColor = "#fff";
+                }
+
+
+                var title1 = document.getElementsByClassName("card-title")
+                for (var i = 0, len = title1.length | 0; i < len; i = i + 1 | 0) {
+                    title1[i].style.color = "#000";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

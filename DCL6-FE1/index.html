@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="jebHrgKwGGSmIg5xTPTlW6Aw2JD7kqdiePkDzRI4">
+    <title>Home - Prepr Network</title>
+
+    <link rel="shortcut icon" href="https://d2qgo50yy98y8.cloudfront.net/public/uploads/settings/favicon.ico">
+    <link rel="icon" href="https://d2qgo50yy98y8.cloudfront.net/public/uploads/settings/favicon.ico"
+        type="image/x-icon">
+    <link
+        href="https://d2qgo50yy98y8.cloudfront.net/public/adminassets/vendors/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css"
+        rel="stylesheet" type="text/css" />
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="https://d2qgo50yy98y8.cloudfront.net/public/front/css/dist/mdb.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="https://d2qgo50yy98y8.cloudfront.net/public/front/css/dist/jquery.toast.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+        href="https://d2qgo50yy98y8.cloudfront.net/public/front/css/intlTelInput.css">
+    <link href="https://d2qgo50yy98y8.cloudfront.net/public/front/enjoyhint/enjoyhint.css" rel="stylesheet">
+    <!-- dialog flow css -->
+    <link href="https://d2qgo50yy98y8.cloudfront.net/public/front/css/dialog-flow.css" rel="stylesheet">
+    <link href="https://d2qgo50yy98y8.cloudfront.net/public/front/css/dist/all.css" rel="stylesheet">
+    <link href="https://d2qgo50yy98y8.cloudfront.net/public/front/css/pnotify.custom.min.css" rel="stylesheet"
+        type="text/css" media="all" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" rel="stylesheet"
+        type="text/css">
+    <!-- Stripe Stylesheet -->
+    <link href="https://d2qgo50yy98y8.cloudfront.net/public/front/css/stripe.css" rel="stylesheet">
+    <script src="https://d2qgo50yy98y8.cloudfront.net/public/front/js/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script src="https://d2qgo50yy98y8.cloudfront.net/public/front/js/popper.min.js"></script>
+    <script src="https://d2qgo50yy98y8.cloudfront.net/public/front/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+        src="https://d2qgo50yy98y8.cloudfront.net/public/front/js/sweetalert.min.js"></script>
+
+
+
+
+
+</head>
+
+<body>
+
+    <link rel="stylesheet" href="main.css">
+
+
+    <header id ="header" class="navbar bg-white fixed-top navbar-expand-lg top-nw-nav-header">
+
+        <div class="container-fluid">
+            <ul class="navbar-nav flex-row d-md-flex top-nw-nv-l">
+
+            </ul>
+            <ul class="navbar-nav right_nav top-nw-nav">
+                <li class="nav-item d-sm-flex d-md-flex d-lg-flex d-xl-flex">
+                    <a class="nav-link" onclick= SwitchMode()>
+                        <span class="menu-icon"><img
+                                src="https://d2qgo50yy98y8.cloudfront.net/public/front/img/explore.png"
+                                alt=""></span>
+                        <span class="d-none d-sm-none d-md-none d-lg-block d-xl-block">Switch View</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown d-sm-flex d-md-flex d-lg-flex d-xl-flex">
+                    <a class="nav-link dropdown-toggle" id="new_org_dashboard" href="#" data-toggle="dropdown"
+                        data-url="/"> <span class="menu-icon"><img
+                                src="https://d2qgo50yy98y8.cloudfront.net/public/front/img/web-browser.png" alt="create"
+                                width="80%" height="4px"></span> <span
+                            class="d-none d-sm-none d-md-none d-lg-block d-xl-block">My Dashboard </span> </a>
+                    <ul class="dropdown-menu firstmenu ">
+                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle"
+                                href="/"> <span class="menu-icon"><img
+                                        src="https://d2qgo50yy98y8.cloudfront.net/public/front/img/user.png"
+                                        alt="create"></span> User Dashboard </a></li>
+                        
+                                        
+
+                    </ul>
+                </li>
+
+
+
+                <!--  -->
+
+                <li class="nav-item dropdown d-sm-flex d-md-flex d-lg-flex d-xl-flex">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> <span class="menu-icon"><img
+                                src="https://d2qgo50yy98y8.cloudfront.net/public/front/img/settings.png" alt=""
+                                width="80%" height="5px"></span><span
+                            class="d-none d-sm-none d-md-none d-lg-block d-xl-block"> Manage</span> </a>
+                    <ul class="dropdown-menu firstmenu last-mbl-right">
+                        <li><a class="dropdown-item" href="/"> <span
+                                    class="menu-icon"><img
+                                        src="https://d2qgo50yy98y8.cloudfront.net/public/front/img/user.png"
+                                        alt="profile"></span> Profile </a></li>
+                    </ul>
+                </li>
+                <li class="nav-item searchbar">
+                    <div class="input-group" id="multiple-datasets">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><img alt="search"
+                                    src="https://d2qgo50yy98y8.cloudfront.net/public/front/img/search_icon.png"></span>
+                        </div>
+                        <input type="text" class="form-control typeahead" id="main_search" style="width:358px"
+                            placeholder="Search Bar">
+                    </div>
+                </li>
+                <li class="nav-item notification dropdown">
+                    <a href="/" class="nav-link user_details_drop dropdown-toggle"
+                        id="dropdownMenuButton" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        <span class="user_profile">
+                            <img alt=""
+                                src="https://prepr-media-live.s3.ca-central-1.amazonaws.com/front/img/default-user.png"
+                                onerror="this.onerror=null;this.src='https://d2qgo50yy98y8.cloudfront.net/public/front/img/default-user.png';"
+                                title="Joseph B">
+                        </span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right notifi_menu" aria-labelledby="dropdownMenuButton">
+                        <ul class="notifi_lst">
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+
+                                    <div class="menu-info">
+                                        <h4 style="font-size: 20px">Joseph B</h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+                                        <h4><i class="fas fa-user"></i> My Info</h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+                                        <h4><i class="fas fa-question-circle"></i> Help </h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+                                        <h4><i class="fas fa-envelope"></i> Inbox</h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+                                        <h4><i class="fas fa-newspaper"></i> Newsfeed </h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+                                        <h4><i class="fas fa-bell"></i>
+                                            Notifications 18
+                                        </h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+
+                                        <h4><i class="fas fa-cog"></i> Settings</h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+                                        <h4><i class="fas fa-sign-out-alt"></i> Log Out</h4>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </li>
+
+            </ul>
+        </div>
+        <div class="mobile_search">
+            <div class="input-group" id="multiple-datasets">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><img alt="search"
+                            src="https://d2qgo50yy98y8.cloudfront.net/public/front/img/search_icon.png"></span>
+
+                    <input type="text" class="form-control typeahead" id="mobile_main_search" style="width:348px"
+                        placeholder="Search Bar">
+                </div>
+
+            </div>
+            <!--  <a class="pull-right" id="popover" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover">Toggle popover</a> -->
+        </div>
+    </header>
+    <script src="https://d2qgo50yy98y8.cloudfront.net/public/front/js/typeahead.jquery.js"></script>
+    <script src="https://d2qgo50yy98y8.cloudfront.net/public/front/js/typeahead.bundle.js"></script>
+    <script src="https://d2qgo50yy98y8.cloudfront.net/public/front/js/typeahead.bundle.min.js"></script>
+    <script src="https://d2qgo50yy98y8.cloudfront.net/public/front/js/bloodhound.js"></script>
+    <div id="contactForm">
+        <h1>Report</h1>
+        <form method="POST" action="/" accept-charset="UTF-8"
+            enctype="multipart/form-data"><input name="_token" type="hidden"
+                value="jebHrgKwGGSmIg5xTPTlW6Aw2JD7kqdiePkDzRI4">
+
+            <input class="form-control" id="test2" name="ref_type" type="hidden">
+            <input class="form-control" id="test1" name="ref_id" type="hidden">
+            <textarea class="form-control" placeholder="Description" cols="20" rows="5" name="description"></textarea>
+            <span class="help-block"></span>
+            <br>
+            <input class="btn btn-sm btn-success" type="submit" value="Save">
+            <input class="btn btn-sm btn-danger closeReportsForm" value="Cancel" disabled />
+        </form>
+    </div>
+
+    <script>
+        $(function () {
+            // contact form animations
+            $('.contact').click(function () {
+                var ref_id = $(this).attr("data-id");
+                var ref_type = $(this).attr("ref-type");
+                $('#contactForm').fadeToggle();
+                $("#test1").val(ref_id);
+                $("#test2").val(ref_type);
+            });
+            $(document).mouseup(function (e) {
+                var container = $("#contactForm");
+                if (!container.is(e.target) // if the target of the click isn't the container...
+                    &&
+                    container.has(e.target).length === 0) // ... nor a descendant of the container
+                {
+                    container.fadeOut();
+                }
+            });
+            $('.closeReportsForm').click(function () {
+                $("#contactForm").fadeOut();
+            });
+        });
+
+    </script>
+    <script>
+        $(document).on('click', '.top-nw-nav .dropdown-menu', function (e) {
+            e.stopPropagation();
+        });
+
+    </script>
+    <div class="wrapper">
+        <aside id="slide-out" class="side-nav user-hint">
+
+            <div class="user">
+                <div class="logo-wrapper waves-light">
+                    <a href="/">
+                        <img src="https://prepr-media-live.s3.ca-central-1.amazonaws.com/front/img/default-user.png"
+                            class="img-fluid"
+                            onerror="this.onerror=null;this.src='https://d2qgo50yy98y8.cloudfront.net/public/front/img/default-user.png';">
+                    </a>
+                </div>
+                <a href="/">
+                    <p align="center">Joseph B</p>
+                </a>
+            </div>
+            <div class="custom-scrollbar">
+
+                <div class="sidenav">
+                    <ul style="">
+
+
+
+                        <li style="background-color: #f5f5f5">Browse</li>
+                        <li><a href="/" class="nav_explore">Explore</a></li>
+                        <li><a href="" class="nav_labs">Labs</a></li>
+                        <li><a href="/" class="nav_challenges">Challenges</a></li>
+                        <li><a href="/"
+                                class="nav_organisation">Organizations</a></li>
+                        <li style="background-color: #f5f5f5">My Activity</li>
+                        <li><a href="/" class="nav_projects">Projects</a></li>
+                        <li><a href="/" class="nav_team_matching">Team Matching</a>
+                        </li>
+                        <li><a href="/" class="nav_achievements">Achievements</a></li>
+                        <li><a href="/" class="nav_resources">Resources</a></li>
+
+
+
+
+                        <li><a href="https://intercom.help/preprme/en/" class="">Help Center</a></li>
+                        <li><a href="#" class="">v7.1.2</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sidenav-bg rgba-blue-strong"></div>
+        </aside>
+    </div>
+
+
+    <script>
+        /*Jquery for show challenge name as image*/
+        function imageError(image) {
+            // hide broken image
+            $(image).hide();
+            // show parent div for image
+            $(image).parent().show();
+            // remove display none form challenge name html
+            $(image).closest('.explorer_img').find(".imageCanvasError").attr("style", "display: block;");
+        }
+
+        /*Jquery for show recommendations as image*/
+        function imageErrorRecommendations(image) {
+            // hide broken image
+            $(image).hide();
+            // show parent div for image
+            $(image).parent().show();
+            // remove display none form recommendations name html
+            $(image).closest('.item').find(".imageCanvasError").attr("style", "display: block;");
+        }
+    </script>
+    <section class="bg-alice-blue main_section">
+        <div class="container p-t-20 p-b-20">
+            <div class="row front-home-pg">
+                <div class="col-md-12">
+                    <div class="card bg-white">
+                        <div class="p-l-20 p-r-20">
+                            <div class="card-header bg-white p-l-0 p-r-0 p-tb-20">
+                                <div class="card-title m-0 p-0">
+                                    <div class="row">
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="jumbotron container jumbotron-cstm">
+                                                        Welcome back,
+                                                        <bold>Joseph B</bold>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="demo" class="row recommendations">
+                                            <div class="col-md-12 p-t-20 p-b-20">
+                                                <div class="row">
+
+                                                    <div class="col-lg-4 col-md-6">
+                                                        <div class="card bg-white">
+                                                            <div class="card-block">
+                                                                <h5 class="card-title">
+                                                                    Recommended Challenges
+                                                                </h5>
+                                                                <p class="card-text">
+                                                                    These challenges are recommended to you
+                                                                    based on
+                                                                    your profile.
+                                                                </p>
+
+                                                                <div id="chal_slder" class="canvas-html-conver">
+
+                                                                    <div class="owl">
+                                                                        <h5 class="card-text"
+                                                                            style="display: block; margin-left: auto; margin-right: auto">
+                                                                            Follow some <a
+                                                                                href="/"
+                                                                                alt="Tags">tags</a> in your profile
+                                                                            to get recommended challenges.
+                                                                        </h5>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-4 col-md-6">
+
+                                                        <div class="card bg-white">
+                                                            <div class="card-block">
+                                                                <h5 class="card-title">
+                                                                    Recommended Labs
+                                                                </h5>
+                                                                <p class="card-text">
+                                                                    These labs are recommended to you based on your
+                                                                    profile.
+                                                                </p>
+                                                                <div class="pop canvas-html-conver">
+                                                                    <h5 class="card-text"
+                                                                        style="display: block; margin-left: auto; margin-right: auto">
+                                                                        Follow some <a
+                                                                            href="/"
+                                                                            alt="Tags">tags</a> in your profile
+                                                                        to get recommended challenges.
+                                                                    </h5>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-4 col-md-6">
+                                                        <div class="card bg-white">
+                                                            <div class="card-block">
+                                                                <h5 class="card-title">
+                                                                    Recommended Resources
+                                                                </h5>
+
+                                                                <p class="card-text">
+                                                                    These resources are recommended to you based
+                                                                    on
+                                                                    your profile.
+                                                                </p>
+                                                                <div class="jhjhjhk canvas-html-conver">
+                                                                    <h5 class="card-text"
+                                                                        style="display: block; margin-left: auto; margin-right: auto">
+                                                                        Follow some <a
+                                                                            href="/"
+                                                                            alt="Tags">tags</a> in your profile
+                                                                        to get recommended challenges.
+                                                                    </h5>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-sm-6 exp-title">Explore</div>
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div class="float-lg-right float-md-right float-sm-left">
+                                                <div class="btn-toolbar">
+                                                    <div class="btn-group clp_hint">
+                                                        <a class="btn waves-effect filter-button  active "
+                                                            href="/">Challenges</a>
+                                                        <a class="btn waves-effect filter-button "
+                                                            href="Labs.html">Labs</a>
+                                                        <a class="btn waves-effect filter-button "
+                                                            href="Projects.html">Projects</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a name="challenges"></a>
+                        <div class="card-body explorer ">
+                            <div class="row filter challenges">
+                                <div class="col-sm-5">
+                                    <div class="explorer_img cursor-pointer"
+                                        onclick="window.location.href='/'">
+                                        <div id="canvasHTML" class="imageCanvasError"
+                                            style="width: 100%; display: none;">
+                                            <div class="canvasbox">
+                                                <div class="canvas-header">
+                                                    <h5 class="green-txt"> Challenge</h5>
+                                                </div>
+                                                <div class="canvas-body green-bg-box">
+                                                    <p>Magnet - Product Manager 5: Product Release</p>
+                                                </div>
+                                                <div class="canvas-footer">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="https://thumbs.dreamstime.com/b/challenge-banner-template-ribbon-label-sign-177648129.jpg"
+                                            onerror="imageError(this)" class="img-responsive">
+                                    </div>
+                                </div>
+                                <div class="col-sm-7">
+                                    <div class="explore_details">
+                                        <h4 class="cursor-pointer"
+                                            onclick="window.location.href='/'"
+                                            style="display: inline">Magnet - Product Manager 5: Product Release</h4>
+
+
+                                        <div class="explore_cat">
+                                            Challenge
+                                        </div>
+                                        <p>
+                                            Introduction:
+
+                                            It is the role of a product manager to plan the release of a new product or
+                                            feature. Their job is to determine the goals of product development and
+                                            create a roadmap to reach those goals. In creating a product release plan, a
+                                            product manager sets a guide and timeline for themselves a
+                                        </p>
+                                        <div class="list_categury">
+                                        </div>
+                                        <div class="view_more_expor">
+                                            <a
+                                                href="/">View</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="divider"></div>
+                            </div>
+                            <div class="row filter challenges">
+                                <div class="col-sm-5">
+                                    <div class="explorer_img cursor-pointer"
+                                        onclick="window.location.href='/'">
+                                        <div id="canvasHTML" class="imageCanvasError"
+                                            style="width: 100%; display: none;">
+                                            <div class="canvasbox">
+                                                <div class="canvas-header">
+                                                    <h5 class="green-txt"> Challenge</h5>
+                                                </div>
+                                                <div class="canvas-body green-bg-box">
+                                                    <p>Magnet - Product Manager 4: Retention Marketing Plan</p>
+                                                </div>
+                                                <div class="canvas-footer">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="https://thumbs.dreamstime.com/b/challenge-banner-template-ribbon-label-sign-177648129.jpg"
+                                            onerror="imageError(this)" class="img-responsive">
+                                    </div>
+                                </div>
+                                <div class="col-sm-7">
+                                    <div class="explore_details">
+                                        <h4 class="cursor-pointer"
+                                            onclick="window.location.href='/'"
+                                            style="display: inline">Magnet - Product Manager 4: Retention Marketing Plan
+                                        </h4>
+
+
+                                        <div class="explore_cat">
+                                            Challenge
+                                        </div>
+                                        <p>
+                                            Introduction:
+
+                                            Customer retention is an essential consideration for product managers. Used
+                                            in tandem with acquisition, retention is a means of increasing conversion
+                                            and building a resilient business. If customer acquisition is the offence,
+                                            then retention is the defence, both are essential to a suc
+                                        </p>
+                                        <div class="list_categury">
+                                        </div>
+                                        <div class="view_more_expor">
+                                            <a
+                                                href="/">View</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="divider"></div>
+                            </div>
+                            <div class="row filter challenges">
+                                <div class="col-sm-5">
+                                    <div class="explorer_img cursor-pointer"
+                                        onclick="window.location.href='/'">
+                                        <div id="canvasHTML" class="imageCanvasError"
+                                            style="width: 100%; display: none;">
+                                            <div class="canvasbox">
+                                                <div class="canvas-header">
+                                                    <h5 class="green-txt"> Challenge</h5>
+                                                </div>
+                                                <div class="canvas-body green-bg-box">
+                                                    <p>Magnet - Product Manager 3: Activation Marketing Plan</p>
+                                                </div>
+                                                <div class="canvas-footer">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="https://thumbs.dreamstime.com/b/challenge-banner-template-ribbon-label-sign-177648129.jpg"
+                                            onerror="imageError(this)" class="img-responsive">
+                                    </div>
+                                </div>
+                                <div class="col-sm-7">
+                                    <div class="explore_details">
+                                        <h4 class="cursor-pointer"
+                                            onclick="window.location.href='/'"
+                                            style="display: inline">Magnet - Product Manager 3: Activation Marketing
+                                            Plan</h4>
+
+
+                                        <div class="explore_cat">
+                                            Challenge
+                                        </div>
+                                        <p>
+                                            Introduction:
+
+                                            Product managers are responsible for building ongoing relationships with
+                                            customers and creating a reputation for the band as well as the product.
+                                            There are two main types of activation marketing; there is brand activation
+                                            and direct response marketing. Direct response marketing oper
+                                        </p>
+                                        <div class="list_categury">
+                                        </div>
+                                        <div class="view_more_expor">
+                                            <a
+                                                href="/">View</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="divider"></div>
+                            </div>
+
+                            <div class="appendNew"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+
+        var x = 0;        
+
+        function SwitchMode(){
+            
+            if (x == 0){
+
+                x = 1;
+
+                var bgc1 = document.getElementsByClassName("bg-white")
+                for (var i=0, len=bgc1.length|0; i<len; i=i+1|0) {
+                    bgc1[i].style.backgroundColor = "#2F4F4F";
+                }
+
+                var bgc2 = document.getElementsByClassName("bg-alice-blue")
+                for (var i=0, len=bgc2.length|0; i<len; i=i+1|0) {
+                    bgc2[i].style.backgroundColor = "#000";
+                }
+
+                
+                var title1 = document.getElementsByClassName("card-title")
+                for (var i=0, len=title1.length|0; i<len; i=i+1|0) {
+                    title1[i].style.color = "#27ae60";
+                }
+            }
+            else{
+
+                x = 0;
+
+                var bgc1 = document.getElementsByClassName("bg-white")
+                for (var i=0, len=bgc1.length|0; i<len; i=i+1|0) {
+                    bgc1[i].style.backgroundColor = "#fff";
+                }
+
+                var bgc2 = document.getElementsByClassName("bg-alice-blue")
+                for (var i=0, len=bgc2.length|0; i<len; i=i+1|0) {
+                    bgc2[i].style.backgroundColor = "#fff";
+                }
+
+                
+                var title1 = document.getElementsByClassName("card-title")
+                for (var i=0, len=title1.length|0; i<len; i=i+1|0) {
+                    title1[i].style.color = "#000";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<%= stylesheet_link_tag "main.css" %>
+
+<header id = 'header' class='alt'>
+<h1>
+  <%= @article.title %>
+</h1>
+
+<p>
+  <strong>Text:</strong>
+  <%= @article.text %>
+</p>
+</header>
+
+...
+ 
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %> |
+<%= link_to 'Destroy', article_path(@article),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Home - Prepr Network</title>
+
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="main.css">
+
+
+</head>
+
+<body>
+
+
+
+    <header id="header" class="navbar bg-white fixed-top navbar-expand-lg top-nw-nav-header">
+
+        <div class="container-fluid">
+            <ul class="navbar-nav flex-row d-md-flex top-nw-nv-l">
+
+            </ul>
+            <ul class="navbar-nav right_nav top-nw-nav">
+                <li class="nav-item d-sm-flex d-md-flex d-lg-flex d-xl-flex">
+                    <a class="nav-link" onclick=SwitchMode()>
+                        <span class="menu-icon"><img
+                                src="https://d2qgo50yy98y8.cloudfront.net/public/front/img/explore.png" alt=""></span>
+                        <span class="d-none d-sm-none d-md-none d-lg-block d-xl-block">Switch View</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown d-sm-flex d-md-flex d-lg-flex d-xl-flex">
+                    <a class="nav-link dropdown-toggle" id="new_org_dashboard" href="#" data-toggle="dropdown"
+                        data-url="/"> <span class="menu-icon"><img
+                                src="https://d2qgo50yy98y8.cloudfront.net/public/front/img/web-browser.png" alt="create"
+                                width="80%" height="4px"></span> <span
+                            class="d-none d-sm-none d-md-none d-lg-block d-xl-block">My Dashboard </span> </a>
+                    <ul class="dropdown-menu firstmenu ">
+                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="/"> <span
+                                    class="menu-icon"><img
+                                        src="https://d2qgo50yy98y8.cloudfront.net/public/front/img/user.png"
+                                        alt="create"></span> User Dashboard </a></li>
+
+
+
+                    </ul>
+                </li>
+
+
+
+                <!--  -->
+
+                <li class="nav-item dropdown d-sm-flex d-md-flex d-lg-flex d-xl-flex">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> <span class="menu-icon"><img
+                                src="https://d2qgo50yy98y8.cloudfront.net/public/front/img/settings.png" alt=""
+                                width="80%" height="5px"></span><span
+                            class="d-none d-sm-none d-md-none d-lg-block d-xl-block"> Manage</span> </a>
+                    <ul class="dropdown-menu firstmenu last-mbl-right">
+                        <li><a class="dropdown-item" href="/"> <span class="menu-icon"><img
+                                        src="https://d2qgo50yy98y8.cloudfront.net/public/front/img/user.png"
+                                        alt="profile"></span> Profile </a></li>
+                    </ul>
+                </li>
+                <li class="nav-item searchbar">
+                    <div class="input-group" id="multiple-datasets">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><img alt="search"
+                                    src="https://d2qgo50yy98y8.cloudfront.net/public/front/img/search_icon.png"></span>
+                        </div>
+                        <input type="text" class="form-control typeahead" id="main_search" style="width:358px"
+                            placeholder="Search Bar">
+                    </div>
+                </li>
+                <li class="nav-item notification dropdown">
+                    <a href="/" class="nav-link user_details_drop dropdown-toggle" id="dropdownMenuButton" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="user_profile">
+                            <img alt=""
+                                src="https://prepr-media-live.s3.ca-central-1.amazonaws.com/front/img/default-user.png"
+                                onerror="this.onerror=null;this.src='https://d2qgo50yy98y8.cloudfront.net/public/front/img/default-user.png';"
+                                title="Joseph B">
+                        </span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right notifi_menu" aria-labelledby="dropdownMenuButton">
+                        <ul class="notifi_lst">
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+
+                                    <div class="menu-info">
+                                        <h4 style="font-size: 20px">Joseph B</h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+                                        <h4><i class="fas fa-user"></i> My Info</h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+                                        <h4><i class="fas fa-question-circle"></i> Help </h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+                                        <h4><i class="fas fa-envelope"></i> Inbox</h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+                                        <h4><i class="fas fa-newspaper"></i> Newsfeed </h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+                                        <h4><i class="fas fa-bell"></i>
+                                            Notifications 18
+                                        </h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+
+                                        <h4><i class="fas fa-cog"></i> Settings</h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-block" href="/">
+                                    <div class="menu-info">
+                                        <h4><i class="fas fa-sign-out-alt"></i> Log Out</h4>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </li>
+
+            </ul>
+        </div>
+    </header>
+
+    <section class="bg-alice-blue project-section">
+        <div class="container p-t-20 p-b-20">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card bg-white border-r-0">
+                        <div class="p-l-20 p-r-20">
+                            <div class="card-header  bg-white p-l-0 p-r-0 p-tb-20">
+                                <div class="card-title m-0 p-0 add-hint">
+                                    Create a new project
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body add-project">
+                            <div class="col-md-12">
+                                <form method="POST" action="/"
+                                    class="form-horizontal create-project-form" id="create_project_form"
+                                    autocomplete="off" enctype="multipart/form-data"><input name="_token" type="hidden"
+                                        value="IhFPjtVN89tgA1kyEx6qFnhpX8rIcs7aqW9KiasI">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-12 col-sm-12 upload-extr-p mt-4">
+                                                    <div id="drag-and-drop-zone" class="dm-uploader p-5">
+                                                        <div class="row">
+
+                                                            <div class="col-md-6">
+                                                                <div class="upload_bg_img">
+                                                                    <img src="https://d2qgo50yy98y8.cloudfront.net/public/front/img/upload_img.png"
+                                                                        alt="">
+                                                                </div>
+                                                                <input type="hidden" name="file_type" value=""
+                                                                    id="file_type">
+                                                            </div>
+                                                            <div class="col-md-6 col-md-6 mb-4 mt-4">
+                                                                <h3 class="mb-3 mt-4">Drag &amp; drop</h3>
+                                                                <p> or</p>
+                                                                <div
+                                                                    class="btn btn-success mb-4 btnFile waves-effect waves-light">
+                                                                    <input type="file" 
+                                                                        title="Click to add files" class="loadFile1"
+                                                                        name="image">
+                                                                    <span>Choose a project cover image</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <span class="help-block"></span>
+                                                    </div>
+                                                    <span class="help-block text-danger"></span>
+                                                </div>
+                                                <div
+                                                    class="col-md-12 col-sm-12 m-t-20 m-b-20 file-upload-status upload-extr-p-form">
+                                                    <p class="text-center">You will be able to create your pitch and
+                                                        upload files later</p>
+                                                    <div class="h-100">
+                                                        <ul class="list-unstyled p-2 d-flex flex-column col" id="files">
+                                                            <li class="text-muted text-center empty"></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                            <div class="form-head-title">
+                                                <h4>Overview</h4>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="name" placeholder="Project Name*"
+                                                    id="projectname" class="form-control" value="" required="">
+                                                <span class="help-block text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea name="description" id="description"
+                                                    class="form-control form-control-textarea" required="" rows="10"
+                                                    maxlength="300"
+                                                    placeholder="Project Overview * (maximum 300 characters)"></textarea>
+                                                <span class="help-block text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" id="datepicker" name="startdate"
+                                                    class=" form-control" placeholder="Project Start Date *" value=""
+                                                    required="">
+                                                <span class="help-block text-danger"></span>
+                                            </div>
+
+
+
+
+                                        
+
+
+
+
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="input-group mb-3">
+                                                <select class="form-control" name="category"><option value="" selected="selected">Category</select>
+                                            </div>
+                                            <div class="input-group mb-3">
+                                                <select class="form-control" name="industry"><option value="" selected="selected">Industry</option></select>
+                                                <span class="help-block text-danger"></span>
+                                            </div>
+                                            <div class="input-group mb-3">
+                                                <select class="form-control" name="verticals"><option value="" selected="selected">Verticals</option></select>
+                                                <span class="help-block text-danger"></span>
+                                            </div>
+                                            <div class="input-group mb-3">
+                                                <select class="form-control" name="type"><option value="" selected="selected">Type</option></select>
+                                                <span class="help-block text-danger"></span>
+                                            </div>
+                                            <div class="input-group mb-3">
+                                                <select class="form-control" name="stage"><option value="" selected="selected">Stage</option></select>
+                                                <span class="help-block text-danger"></span>
+                                            </div>
+                                            <div class="input-group mb-3">
+                                                <select class="form-control" name="status"><option value="" selected="selected">Status</option></select>
+                                                <span class="help-block text-danger"></span>
+                                            </div>
+                                            <div class="input-group mb-3">
+                                                <select class="form-control" name="recruiting_status"><option value="1">Currently Recruiting</option></select>
+                                                <span class="help-block text-danger"></span>
+                                            </div>
+
+                                        <div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 submitFinal">
+                                        <button
+                                            class="btn btn-success btn-block create waves-effect waves-light"
+                                            type="submit" id="create_project">Create</button>
+                                    </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+
+        var x = 0;
+
+        function SwitchMode() {
+
+            if (x == 0) {
+
+                x = 1;
+
+                var bgc1 = document.getElementsByClassName("bg-white")
+                for (var i = 0, len = bgc1.length | 0; i < len; i = i + 1 | 0) {
+                    bgc1[i].style.backgroundColor = "#2F4F4F";
+                }
+
+                var bgc2 = document.getElementsByClassName("bg-alice-blue")
+                for (var i = 0, len = bgc2.length | 0; i < len; i = i + 1 | 0) {
+                    bgc2[i].style.backgroundColor = "#000";
+                }
+
+
+                var title1 = document.getElementsByClassName("card-title")
+                for (var i = 0, len = title1.length | 0; i < len; i = i + 1 | 0) {
+                    title1[i].style.color = "#27ae60";
+                }
+            }
+            else {
+
+                x = 0;
+
+                var bgc1 = document.getElementsByClassName("bg-white")
+                for (var i = 0, len = bgc1.length | 0; i < len; i = i + 1 | 0) {
+                    bgc1[i].style.backgroundColor = "#fff";
+                }
+
+                var bgc2 = document.getElementsByClassName("bg-alice-blue")
+                for (var i = 0, len = bgc2.length | 0; i < len; i = i + 1 | 0) {
+                    bgc2[i].style.backgroundColor = "#fff";
+                }
+
+
+                var title1 = document.getElementsByClassName("card-title")
+                for (var i = 0, len = title1.length | 0; i < len; i = i + 1 | 0) {
+                    title1[i].style.color = "#000";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
