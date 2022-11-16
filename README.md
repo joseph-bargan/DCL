@@ -1,3 +1,3 @@
 # Joseph Bargan
-Portfolio Examples
+Portfolio Examples &
 Current work: https://www.saltfleetstoneycreeksc.ca/
